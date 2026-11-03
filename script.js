@@ -613,6 +613,15 @@ const course = COURSES[key];
     const search = encodeURIComponent(step[2]);
 
     const action = isDone
+? `<span class="completed-note">✓ Milestone completed · Test ${hasPassed ? "passed" : "recorded"}</span>
+         <button class="button button-quiet undo-button" data-undo="${index}" type="button">Undo</button>`
+      : locked
+        ? `<span class="locked-note">Pass the previous topic test with at least 7/10 to unlock this topic.</span>`
+        : `<span class="practice-tip"><b>Try it:</b> ${safeText(step[3])}</span>
+           ${(!hasPassed && lockRemaining(key, index) > 0)
+             ? `<button class="button button-small button-secondary" type="button" disabled>Retry in ${formatWait(lockRemaining(key, index))}</button>`
+             : `<button class="button button-small ${hasPassed ? "button-secondary" : "button-primary"}" data-test="${index}" type="button">${hasPassed ? "Retake topic test" : "Take 10-question test"} ${hasPassed ? "↻" : "→"}</button>`}
+           ${hasPassed ? `<button class="button button-small button-primary" data-complete="${index}" type="button">Mark complete ✓</button>` : ""}`;
 
 
 
