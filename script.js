@@ -126,3 +126,39 @@ cpp: {
       "Build a C++ project and document it"
     ]
   },
+java: {
+    name: "Java",
+    short: "J",
+    color: "#d99022",
+    tint: "amber",
+    category: "Backend · Android · OOP",
+    level: "Beginner",
+    duration: "6 milestones",
+    description:
+      "Build programming fundamentals with a language widely used for backend and Android development.",
+    longDescription:
+      "Learn Java syntax, object-oriented programming, collections, and how to create a small app.",
+    outcomes: [
+      "Write Java programs",
+      "Apply OOP fundamentals",
+      "Use collections in a project"
+    ],
+    steps: [
+      [
+        "Setup JDK & Hello World",
+        "Install a JDK and editor, then run your first Java program.",
+        "java install jdk hello world beginner",
+        "Compile and run a program that prints a message."
+      ],
+      [
+        "Variables, Types & Operators",
+        "Learn data types, Scanner input, and common operators.",
+        "java variables data types scanner",
+        "Write a program that takes input and calculates a result."
+      ],
+      [
+        "Conditions & Loops",
+        "Use if, switch, for, and while statements.",
+        "java if else loops beginner",
+        "Build a number guessing game."
+      ],
