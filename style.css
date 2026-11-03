@@ -104,3 +104,15 @@ p { color: var(--muted); }
 .trust-points { display: grid; gap: 13px; margin-top: 26px; color: var(--text); font-size: 13px; font-weight: 600; }
 .trust-points > div { display: flex; align-items: center; gap: 11px; }
 .check-icon { display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 800; }
+.login-decoration { position: relative; height: 190px; max-width: 470px; margin-top: 28px; overflow: hidden; }
+.floating-card { position: absolute; z-index: 2; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow-small); }
+.code-card { left: 4%; top: 22px; padding: 13px 17px 16px; width: 245px; transform: rotate(-3deg); animation: slow-float 5s ease-in-out infinite; }
+.window-dots { display: block; color: #ef786d; font-size: 9px; letter-spacing: 2px; margin-bottom: 9px; }
+.code-card code { color: var(--muted); font-size: 11px; line-height: 1.9; }
+.code-card code b { color: var(--primary); }
+.progress-card { right: 2%; bottom: 13px; padding: 15px; width: 185px; transform: rotate(4deg); animation: slow-float 5s 1s ease-in-out infinite; }
+.mini-label { display: block; font-size: 8px; font-weight: 800; letter-spacing: .13em; color: var(--muted); }
+.progress-card strong { display: block; font-size: 25px; margin: 4px 0 8px; }
+.progress-card strong span { color: var(--muted); font-size: 13px; }
+.mini-progress, .stat-progress { height: 5px; border-radius: 20px; background: var(--line); overflow: hidden; }
+.mini-progress i { display: block; width: 28%; height: 100%; background: linear-gradient(90deg, #315fe8, #8b69e8); border-radius: inherit; }
