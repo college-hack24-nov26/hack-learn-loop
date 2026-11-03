@@ -464,4 +464,28 @@ function passedIndexes(key) {
     Number.isInteger(n) && n >= 0 && n < COURSES[key].steps.length
   ))].sort((a, b) => a - b);
 }
+function progress(key) {
+  const total = COURSES[key].steps.length;
+  const completed = completedIndexes(key).length;
+  return {
+    done: completed,
+    total,
+    percent: Math.round((completed / total) * 100)
+  };
+}
+
+function totalProgress() {
+  const keys = Object.keys(COURSES);
+  const total = keys.reduce((sum, key) =>
+    sum + COURSES[key].steps.length, 0
+  );
+  const done = keys.reduce((sum, key) =>
+    sum + progress(key).done, 0
+  );
+  return {
+    done,
+    total,
+    percent: Math.round((done / total) * 100)
+  };
+}
 
