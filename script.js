@@ -753,6 +753,41 @@ function submitQuiz(event) {
     const correct = bank[qIndex].correct;
     return total + (answer === correct ? 1 : 0);
   }, 0);
+ const passed = score >= 7;
+
+  if (passed) {
+    const values = passedIndexes(key);
+    if (!values.includes(index)) values.push(index);
+    state.quizPassed[key] = values.sort((a, b) => a - b);
+    delete state.attempts[attemptKey(key, index)];
+  } else {
+    const entry = state.attempts[attemptKey(key, index)];
+    if (entry) entry.lockUntil = Date.now() + cooldownMs(entry.count);
+  }
+  activeQuiz = null;
+
+  saveState();
+
+  $("quizForm").classList.add("hidden");
+  $("quizResult").classList.remove("hidden");
+
+  $("quizResult").innerHTML = passed
+    ? `<div class="quiz-result-icon">✓</div>
+       <h2>You passed!</h2>
+       <p>Your score: <strong>${score}/10</strong>. You can now mark this milestone complete. Complete it to unlock the next topic.</p>
+       <button class="button button-primary" id="quizContinueBtn" type="button">Return to roadmap</button>`
+    : `<div class="quiz-result-icon fail">↻</div>
+       <h2>Not quite — try again</h2>
+       <p>Your score: <strong>${score}/10</strong>. You need at least 7/10 to pass. Review the topic, then try again in ${formatWait(lockRemaining(key, index))}. Your next test will have different questions in a different order.</p>
+       <button class="button button-secondary" id="quizRoadmapBtn" type="button">Back to roadmap</button>`;
+
+  const cont = $("quizContinueBtn");
+  if (cont) cont.addEventListener("click", () => openRoadmap(key));
+
+  const retry = $("quizRetryBtn");
+  if (retry) retry.addEventListener("click", () => startQuiz(key, index));
+
+  const back = $("quizRoadmapBtn");
 
 
 
