@@ -843,6 +843,12 @@ state.accounts[email]={user:{name,email},done:{},quizPassed:{},lastCompletedCour
   $("brandHome").addEventListener("click",event=>{event.preventDefault();state.user?renderDashboard():showView("login");});
   $("browseCoursesBtn").addEventListener("click",()=>$ ("courseSection").scrollIntoView({behavior:"smooth",block:"start"}));
   $("courseSearch").addEventListener("input",renderCourses);
+$("backToDashboard").addEventListener("click",renderDashboard);$("roadmapBackBottom").addEventListener("click",renderDashboard);$("completionDashboardBtn").addEventListener("click",renderDashboard);
+  $("certificateBtn").addEventListener("click",()=>renderCertificate(state.lastCompletedCourse||state.currentCourse));
+  $("certificateBack").addEventListener("click",()=>{const key=state.lastCompletedCourse||state.currentCourse;if(key&&progress(key).done===progress(key).total)renderCompletion(key);else renderDashboard();});
+  $("printCertificate").addEventListener("click",()=>window.print());
+  $("quizForm").addEventListener("submit",submitQuiz);$("quitQuizBtn").addEventListener("click",()=>openRoadmap(state.currentCourse));
+}
 
 
 
