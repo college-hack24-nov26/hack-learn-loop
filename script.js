@@ -488,4 +488,26 @@ function totalProgress() {
     percent: Math.round((done / total) * 100)
   };
 }
+function setSignedInUI() {
+  const signedIn = Boolean(state.user);
+  $("userChip").classList.toggle("hidden", !signedIn);
+  $("logoutBtn").classList.toggle("hidden", !signedIn);
+  $("headerName").textContent = signedIn
+    ? state.user.name.split(/\s+/)[0]
+    : "Learner";
+  $("avatarInitial").textContent = signedIn
+    ? state.user.name.trim().charAt(0).toUpperCase()
+    : "A";
+}
+
+function renderCourses() {
+  const query = $("courseSearch").value.trim().toLowerCase();
+  const grid = $("courseGrid");
+
+  const cards = Object.entries(COURSES).filter(([key, course]) =>
+    [course.name, course.category, course.description]
+      .join(" ")
+      .toLowerCase()
+      .includes(query)
+  );
 
