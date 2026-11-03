@@ -279,3 +279,13 @@ p { color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+@media print {
+  body { background: #fff !important; color: #222 !important; }
+  body * { visibility: hidden !important; }
+  #view-certificate, #view-certificate * { visibility: visible !important; }
+  #view-certificate { display: block !important; position: absolute; inset: 0; padding: 0; width: 100%; }
+  .certificate-toolbar, .certificate-disclaimer, .site-header { display: none !important; }
+  .certificate { box-shadow: none; padding: 0; width: 100%; }
+  .certificate-border { min-height: 94vh; }
+  @page { size: landscape; margin: 8mm; }
+}
