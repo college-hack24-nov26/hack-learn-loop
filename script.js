@@ -332,4 +332,27 @@ project: [
     {q:"What is the benefit of planning features before coding?",o:["You build in a clear order and avoid wasted effort","You never need to test","You can skip the idea","Code writes itself"],a:0}
   ]
 };
+Object.keys(EXTRA_QUESTIONS).forEach((k) => QUIZ_BANKS[k].push(...EXTRA_QUESTIONS[k]));
+
+const QUESTIONS_PER_TEST = 10;
+const RETRY_COOLDOWN_MIN = [2, 10, 60]; // wait after 1st, 2nd, 3rd+ unsuccessful attempt
+
+// Random shuffle (Fisher-Yates) so no two attempts look the same.
+function shuffled(list) {
+  const arr = list.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Answers are kept in memory only, never written into the page HTML.
+let activeQuiz = null;
+
+function attemptKey(key, index) { return `${key}:${index}`; }
+function lockRemaining(key, index) {
+  const entry = state.attempts[attemptKey(key, index)];
+  return entry && entry.lockUntil ? Math.max(0, entry.lockUntil - Date.now()) : 0;
+}
 
