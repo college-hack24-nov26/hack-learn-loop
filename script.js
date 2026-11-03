@@ -270,4 +270,17 @@ structures: [
     {q:"Why choose a suitable data structure?",o:["It affects how data is stored and accessed","It changes the language into another language","It guarantees the app has no bugs","It replaces testing"],a:0},
     {q:"What is a useful first step when learning a complex concept like OOP?",o:["Build a small example and observe how it works","Memorise code without running it","Skip the basics","Write the whole operating system"],a:0}
   ],
+project: [
+    {q:"What is the purpose of a mini project?",o:["Apply concepts to solve a small, practical problem","Avoid using what you learned","Replace every lesson with theory","Test the keyboard"],a:0},
+    {q:"What should a program do before being considered finished?",o:["Be tested with normal and edge-case inputs","Be judged only by its file name","Never be run","Contain as many lines as possible"],a:0},
+    {q:"What is a bug?",o:["A flaw that causes incorrect or unexpected behaviour","A required programming language","A project title","A data type"],a:0},
+    {q:"Why use version control such as Git?",o:["Track changes and collaborate on code","Make a password secure automatically","Replace the programming language","Run code without a computer"],a:0},
+    {q:"What is a README commonly for?",o:["Explaining what a project does and how to run it","Storing the computer's RAM","Replacing all source files","Hiding errors"],a:0},
+    {q:"What is a test case?",o:["An input and expected behaviour used to check a program","A type of keyboard","A variable name only","A project logo"],a:0},
+    {q:"What is a collection/library useful for in a project?",o:["Providing reusable functionality or data structures","Making the code impossible to read","Deleting source code","Removing the need for a goal"],a:0},
+    {q:"What is a good way to approach a project that feels too large?",o:["Break it into small features and build them step by step","Write everything at once without testing","Stop planning","Add random features"],a:0},
+    {q:"Why document important decisions in a project?",o:["So other people and your future self can understand it","So code cannot be changed","So tests are unnecessary","To increase file size"],a:0},
+    {q:"Which is a useful sign of a successful beginner project?",o:["It works for its intended task and you can explain the code","It has the most lines","It uses every language at once","It has no documentation"],a:0}
+  ]
+};
 
