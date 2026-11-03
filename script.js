@@ -434,4 +434,21 @@ function showView(name) {
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+function showToast(message) {
+  const el = $("toast");
+  el.textContent = message;
+  el.classList.add("visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("visible"), 2800);
+}
+
+function safeText(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
 
