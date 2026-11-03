@@ -822,6 +822,17 @@ function setAuthMode(mode) {
   $("registerModeBtn").classList.toggle("active",register); $("loginModeBtn").classList.toggle("active",!register); $("loginError").textContent="";
 }
 function logout() {
+state.user=null;state.done={};state.quizPassed={};state.attempts={};state.lastCompletedCourse=null;state.currentCourse=null;state.currentStep=null;saveState();
+  $("passwordInput").value="";$("loginError").textContent="";setSignedInUI();setAuthMode("login");showView("login");
+}
+function bindEvents() {
+  $("loginForm").addEventListener("submit",event=>{
+    event.preventDefault();const name=$("nameInput").value.trim(),email=normalizeEmail($("emailInput").value),password=$("passwordInput").value;
+    const emailValid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),register=state.authMode==="register";
+    if(register&&name.length<2){$("loginError").textContent="Please enter a name with at least 2 characters.";$("nameInput").focus();return;}
+    if(!emailValid){$("loginError").textContent="Please enter a valid email address.";$("emailInput").focus();return;}
+    if(password.length<3){$("loginError").textContent="Enter at least 3 characters to continue in this demo.";$("passwordInput").focus();return;}
+    if(register){if(state.accounts[email]){$("loginError").textContent="An account profile with this email already exists. Choose Sign in.";return;}
 
 
 
