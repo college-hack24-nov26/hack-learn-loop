@@ -788,6 +788,25 @@ function submitQuiz(event) {
   if (retry) retry.addEventListener("click", () => startQuiz(key, index));
 
   const back = $("quizRoadmapBtn");
+if (back) back.addEventListener("click", () => openRoadmap(key));
+}
+function completeMilestone(key,index) {
+  const course=COURSES[key]; if(!course)return;
+  const done=completedIndexes(key), passed=passedIndexes(key);
+  if(index>0&&!done.includes(index-1)){showToast("Complete the previous milestone first.");return;}
+  if(!passed.includes(index)){showToast("Pass the topic test with at least 7/10 first.");return;}
+  if(!done.includes(index)) done.push(index); state.done[key]=done.sort((a,b)=>a-b); saveState();
+  const p=progress(key); if(p.done===p.total){state.lastCompletedCourse=key;saveState();renderCompletion(key);}else{openRoadmap(key);showToast("Milestone complete! The next topic is unlocked.");}
+}
+function undoMilestone(key,index) {
+  state.done[key]=completedIndexes(key).filter(n=>n<index);
+  state.quizPassed[key]=passedIndexes(key).filter(n=>n<index);
+  saveState();openRoadmap(key);showToast("This milestone and later progress were reset.");
+}
+function renderCompletion(key) {
+  const course=COURSES[key]; $("completedCourseName").textContent=course.name; $("completedUserName").textContent=state.user.name;
+  $("completionMessage").textContent=`You've completed all six milestones in the ${course.name} learning path, including the topic tests. Take a moment to celebrate, then choose a practical next step.`;
+  $("nextSteps").innerHTML=course.next.map((item,index)=>`<div class="next-step"><span>0${index+1}</span><p>${safeText(item)}</p></div>`).join(""); showView("completion");
 
 
 
