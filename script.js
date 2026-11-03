@@ -549,5 +549,17 @@ $("emptyCourses").classList.toggle("hidden", cards.length > 0);
   });
 }
 
+function renderStats() {
+  const total = totalProgress();
+  $("statPaths").textContent = Object.keys(COURSES).length;
+  $("statDone").textContent = total.done;
+  $("statProgress").textContent = `${total.percent}%`;
+  $("overallBar").style.width = `${total.percent}%`;
+}
+
+function renderDashboard() {
+  if (!state.user) return showView("login");
+
+  setSignedInUI();
 
 
