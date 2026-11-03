@@ -185,3 +185,31 @@ p { color: var(--muted); }
 .progress-track { height: 7px; background: var(--line); border-radius: 30px; overflow: hidden; }
 .progress-track i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--primary), #36bd9a); border-radius: inherit; transition: width .4s ease; }
 .course-card-action { display: flex; justify-content: space-between; align-items: center; padding-top: 13px; border-top: 1px solid var(--line); font-size: 12px; font-weight: 700; }
+.course-card-action .arrow { color: var(--course-color); font-size: 17px; transition: transform .2s; }.course-card:hover .arrow { transform: translate(3px, -2px); }
+.empty-state { padding: 35px; text-align: center; border: 1px dashed var(--line-strong); border-radius: var(--radius-lg); }
+.site-footer { display: flex; justify-content: space-between; gap: 15px; margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }.site-footer b { color: var(--primary); margin-left: 4px; }
+.breadcrumb { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; margin: 0 0 23px; }.breadcrumb span:last-child { color: var(--text); font-weight: 700; }
+.roadmap-hero { display: grid; grid-template-columns: 1fr minmax(260px, .65fr); gap: 30px; align-items: center; padding: clamp(25px, 4vw, 40px); border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--surface); box-shadow: var(--shadow-small); }
+.roadmap-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 9px 0 13px; }
+.roadmap-hero-copy > p { max-width: 560px; line-height: 1.7; font-size: 13px; }
+.roadmap-meta { display: flex; flex-wrap: wrap; gap: 8px 15px; margin-top: 20px; color: var(--muted); font-size: 10px; font-weight: 600; }
+.roadmap-progress-card { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface-soft); }
+.progress-head { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 12px; font-size: 12px; font-weight: 700; }.progress-head strong { color: var(--primary); font-size: 21px; }
+.roadmap-progress-card > p { font-size: 11px; margin: 9px 0 18px; }
+.progress-note { padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }.progress-note span { color: #dca437; margin-right: 5px; }
+.roadmap-content-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 40px 0 22px; }.roadmap-content-heading h2 { margin: 5px 0; }.roadmap-content-heading p { font-size: 12px; margin: 0; }
+.step-count { padding: 7px 11px; border: 1px solid var(--line); border-radius: 30px; background: var(--surface); color: var(--muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
+.milestone-list { position: relative; display: grid; gap: 13px; }
+.milestone-list:before { content: ""; position: absolute; top: 27px; bottom: 27px; left: 24px; width: 2px; background: var(--line-strong); }
+.milestone { position: relative; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 16px; }
+.milestone-index { z-index: 1; display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); color: var(--muted); font: 800 12px Manrope, sans-serif; }
+.milestone.is-done .milestone-index { background: var(--green-soft); border-color: color-mix(in srgb, var(--green) 35%, var(--line)); color: var(--green); font-size: 20px; }
+.milestone-body { min-width: 0; padding: 20px 23px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-small); }
+.milestone.is-locked .milestone-body { background: var(--surface-soft); }
+.milestone-title-row { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.milestone-number { color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.milestone h3 { font-size: 17px; margin: 4px 0 7px; }
+.milestone-body > p { font-size: 12px; margin-bottom: 14px; line-height: 1.7; }
+.status-pill { flex-shrink: 0; padding: 5px 9px; border-radius: 30px; font-size: 9px; font-weight: 800; }
+.status-done { color: var(--green); background: var(--green-soft); }.status-ready { color: var(--primary); background: var(--primary-soft); }.status-locked { color: var(--muted); background: var(--bg); }
+.resource-links { display: flex; flex-wrap: wrap; gap: 8px; }
