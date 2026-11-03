@@ -408,4 +408,16 @@ function syncAccount() {
     lastCompletedCourse: state.lastCompletedCourse
   };
 }
+function saveState() {
+  try {
+    syncAccount();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      accounts: state.accounts,
+      activeEmail: state.user ? normalizeEmail(state.user.email) : null,
+      theme: state.theme
+    }));
+  } catch (error) {
+    showToast("Progress could not be saved in this browser.");
+  }
+}
 
