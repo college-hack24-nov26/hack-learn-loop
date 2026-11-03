@@ -303,4 +303,18 @@ const EXTRA_QUESTIONS = {
     {q:"Which of these is usually a bad variable name?",o:["x1y2z3q","studentAge","totalMarks","userName"],a:0},
     {q:"What is the result of combining two strings (concatenation)?",o:["One longer string","A number","A Boolean only","An error every time"],a:0}
   ],
+control: [
+    {q:"What does logical OR generally require?",o:["At least one condition to be true","Both conditions to be false","No conditions","A loop to be infinite"],a:0},
+    {q:"What does the break statement commonly do in a loop?",o:["Exits the loop early","Starts the loop again from zero","Deletes the loop variable","Declares a function"],a:0},
+    {q:"What does elif / else if allow you to do?",o:["Check another condition when earlier ones are false","Repeat code forever","Define a class","Import a library"],a:0},
+    {q:"What is a nested loop?",o:["A loop inside another loop","A loop that never starts","A loop with no body","A variable inside a string"],a:0},
+    {q:"What is an off-by-one error?",o:["A loop or index that runs one step too many or too few","A missing monitor","A slow internet connection","A misspelled file name only"],a:0}
+  ],
+  functions: [
+    {q:"What is a function call?",o:["Running a function by using its name","Writing a comment","Deleting a variable","Closing the editor"],a:0},
+    {q:"What is the scope of a variable?",o:["The part of the program where it can be used","Its colour in the editor","Its file size","The speed of the computer"],a:0},
+    {q:"What is an argument?",o:["The actual value passed to a function when calling it","A fight between programmers","The name of a language","A type of loop"],a:0},
+    {q:"What is a common way to add an item to a list?",o:["Use the list's append/add operation","Rename the list","Restart the computer","Delete the index"],a:0},
+    {q:"What is recursion?",o:["A function calling itself","A loop with no condition","A variable with two names","A file with no extension"],a:0}
+  ],
 
