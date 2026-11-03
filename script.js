@@ -397,4 +397,15 @@ function activateAccount(email, persist = true) {
   state.lastCompletedCourse = account.lastCompletedCourse || null;
   if (persist) saveState();
 }
+function syncAccount() {
+  if (!state.user) return;
+  const email = normalizeEmail(state.user.email);
+  state.accounts[email] = {
+    user: state.user,
+    done: state.done,
+    quizPassed: state.quizPassed,
+    attempts: state.attempts,
+    lastCompletedCourse: state.lastCompletedCourse
+  };
+}
 
