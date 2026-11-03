@@ -246,3 +246,16 @@ const QUIZ_BANKS = {
     {q:"What does a logical AND generally require?",o:["Both conditions to be true","At least one condition to be false","No conditions at all","A loop to finish first"],a:0},
     {q:"What is a good way to test a conditional program?",o:["Try inputs that exercise each branch","Test only one input forever","Remove all conditions","Never check the output"],a:0}
   ],
+   functions: [
+    {q:"What is a function?",o:["A reusable block of code that performs a task","A computer part","A kind of comment only","A folder on the desktop"],a:0},
+    {q:"Why use functions?",o:["To organise code and avoid repeating logic","To make variables impossible","To remove all program output","To replace all data types"],a:0},
+    {q:"What is a parameter?",o:["A named input accepted by a function","The colour of the editor","The final output screen","A type of operating system"],a:0},
+    {q:"What does a return value do?",o:["Sends a result back to the caller","Repeats the function forever","Deletes the function","Opens a new file"],a:0},
+    {q:"What is an array or list typically used for?",o:["Keeping multiple values in one collection","Storing only one function name","Changing the CPU speed","Compiling code"],a:0},
+    {q:"What is an index commonly used for?",o:["Accessing an item by its position in a collection","Checking internet speed","Naming the computer","Opening a compiler"],a:0},
+    {q:"In many languages, what is the first index of an array/list?",o:["0","1 in every language","-10","100"],a:0},
+    {q:"What is a string method or operation often used for?",o:["Working with text","Controlling the monitor","Installing a compiler","Creating a network cable"],a:0},
+    {q:"Why split a large task into functions?",o:["Each smaller part is easier to test and maintain","It guarantees zero bugs","It removes the need for names","It makes all code identical"],a:0},
+    {q:"What should you do if a function returns an unexpected result?",o:["Check its inputs, logic and return statement","Delete the entire project immediately","Ignore the result","Change the computer clock"],a:0}
+  ],
+
