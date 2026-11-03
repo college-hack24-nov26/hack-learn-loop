@@ -272,3 +272,10 @@ p { color: var(--muted); }
   .milestone-list:before { left: 17px; }.milestone { grid-template-columns: 36px minmax(0,1fr); gap: 9px; }.milestone-index { width: 36px; height: 36px; border-radius: 12px; font-size: 10px; }.milestone.is-done .milestone-index { font-size: 16px; }
   .milestone-body { padding: 16px 13px; border-radius: 15px; }.milestone-title-row { flex-direction: column; gap: 6px; }.milestone h3 { font-size: 15px; }.milestone-body > p { font-size: 11px; }
   .milestone-footer { align-items: start; flex-direction: column; gap: 10px; }.practice-tip { max-width: 100%; }.resource-links { gap: 6px; }.resource-links a { padding: 7px 8px; font-size: 9px; }
+.roadmap-bottom { align-items: start; flex-direction: column; padding: 18px; }
+  .completion-card { padding: 28px 17px; }.completion-summary { grid-template-columns: 1fr; gap: 13px; margin: 24px 0 28px; }.completion-summary div { grid-template-columns: 110px 1fr; align-items: center; }.next-steps-grid { grid-template-columns: 1fr; }
+  .certificate { padding: 7px; }.certificate-border { min-height: 500px; padding: 26px 14px; outline-offset: -6px; }.certificate h1 { font-size: 30px; }.certificate h2 { font-size: 17px; }.certificate-eyebrow { font-size: 9px; letter-spacing: .17em; }.certificate-footer { gap: 8px; margin-top: 30px; }.certificate-footer > div { min-width: 0; }.signature { font-size: 15px; }.signature-line { width: 75px; }.certificate-seal { width: 53px; height: 53px; font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
