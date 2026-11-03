@@ -378,4 +378,23 @@ function loadState() {
       if (old && old.user && old.user.email) {
         const email = normalizeEmail(old.user.email);
         state.accounts[email] = { user: old.user, done: old.done || {}, quizPassed: {}, lastCompletedCourse: old.lastCompletedCourse || null };
+activateAccount(email, false);
+      }
+    }
+  } catch (error) {
+    console.warn("Could not read saved SkillPath profiles.", error);
+  }
+  applyTheme();
+}
+
+function activateAccount(email, persist = true) {
+  const account = state.accounts[email];
+  if (!account) return;
+  state.user = account.user;
+  state.done = account.done || {};
+  state.quizPassed = account.quizPassed || {};
+  state.attempts = account.attempts || {};
+  state.lastCompletedCourse = account.lastCompletedCourse || null;
+  if (persist) saveState();
+}
 
