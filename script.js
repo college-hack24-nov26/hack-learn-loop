@@ -622,6 +622,16 @@ const course = COURSES[key];
              ? `<button class="button button-small button-secondary" type="button" disabled>Retry in ${formatWait(lockRemaining(key, index))}</button>`
              : `<button class="button button-small ${hasPassed ? "button-secondary" : "button-primary"}" data-test="${index}" type="button">${hasPassed ? "Retake topic test" : "Take 10-question test"} ${hasPassed ? "↻" : "→"}</button>`}
            ${hasPassed ? `<button class="button button-small button-primary" data-complete="${index}" type="button">Mark complete ✓</button>` : ""}`;
+return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-locked" : ""}">
+      <div class="milestone-index">${icon}</div>
+      <div class="milestone-body">
+        <div class="milestone-title-row">
+          <div>
+            <span class="milestone-number">MILESTONE ${String(index + 1).padStart(2, "0")}</span>
+            <h3>${safeText(step[0])}</h3>
+          </div>
+          <span class="status-pill ${isDone ? "status-done" : locked ? "status-locked" : hasPassed ? "status-done" : "status-ready"}">${status}</span>
+        </div>
 
 
 
