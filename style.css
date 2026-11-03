@@ -289,3 +289,21 @@ p { color: var(--muted); }
   .certificate-border { min-height: 94vh; }
   @page { size: landscape; margin: 8mm; }
 }
+/* Account mode and topic-test UI */
+.auth-mode-switch { display:flex; gap:6px; padding:5px; margin:0 0 20px; border:1px solid var(--line); border-radius:12px; background:var(--surface-soft); }
+.auth-mode { flex:1; border:0; border-radius:8px; padding:10px 8px; background:transparent; color:var(--muted); font:inherit; font-size:12px; font-weight:700; cursor:pointer; }
+.auth-mode.active { color:var(--text); background:var(--surface); box-shadow:0 2px 8px rgba(20,35,60,.08); }
+.quiz-shell { max-width:900px; margin:0 auto; padding:clamp(22px,4vw,40px); }
+.quiz-topline { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+.quiz-pass-rule { display:inline-flex; align-items:center; padding:7px 11px; border-radius:999px; background:var(--surface-soft); color:var(--primary); font-size:12px; font-weight:800; }
+.quiz-shell h1 { margin:8px 0 8px; font-size:clamp(26px,4vw,38px); }
+.quiz-questions { display:grid; gap:14px; margin:24px 0; }
+.quiz-question { min-width:0; margin:0; padding:18px; border:1px solid var(--line); border-radius:14px; }
+.quiz-question legend { max-width:100%; padding:0 5px; color:var(--text); font-weight:750; line-height:1.5; }
+.quiz-question legend span { color:var(--primary); margin-right:5px; }
+.quiz-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:12px; }
+.quiz-option { display:flex; align-items:flex-start; gap:9px; padding:11px 12px; border:1px solid var(--line); border-radius:10px; color:var(--text); font-size:13px; line-height:1.45; cursor:pointer; }
+.quiz-option:has(input:checked) { border-color:var(--primary); background:color-mix(in srgb,var(--primary) 8%,var(--surface)); }
+.quiz-option input { flex:0 0 auto; margin-top:3px; accent-color:var(--primary); }
+.quiz-result { margin-top:22px; padding:24px; border:1px solid var(--line); border-radius:16px; background:var(--surface-soft); }
+.quiz-result h2 { margin:8px 0; }
