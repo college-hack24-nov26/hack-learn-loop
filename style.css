@@ -213,3 +213,16 @@ p { color: var(--muted); }
 .status-pill { flex-shrink: 0; padding: 5px 9px; border-radius: 30px; font-size: 9px; font-weight: 800; }
 .status-done { color: var(--green); background: var(--green-soft); }.status-ready { color: var(--primary); background: var(--primary-soft); }.status-locked { color: var(--muted); background: var(--bg); }
 .resource-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.resource-links a { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 9px; padding: 7px 10px; color: var(--muted); font-size: 10px; font-weight: 700; text-decoration: none; transition: .2s; }
+.resource-links a:hover { color: var(--primary); border-color: var(--primary); }
+.resource-links a span { color: #e05252; }
+.milestone-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-top: 15px; margin-top: 14px; border-top: 1px solid var(--line); }
+.practice-tip, .locked-note, .completed-note { color: var(--muted); font-size: 10px; line-height: 1.6; }.practice-tip { max-width: 72%; }.practice-tip b { color: var(--text); }.completed-note { color: var(--green); font-weight: 700; }
+.roadmap-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 25px; padding: 22px 24px; border-radius: var(--radius-lg); background: var(--primary-soft); }.roadmap-bottom strong { font-size: 14px; }.roadmap-bottom p { margin: 4px 0 0; font-size: 11px; }
+.completion-view { max-width: 850px; margin: 0 auto; }
+.completion-card { padding: clamp(25px, 5vw, 55px); text-align: center; }
+.completion-icon { display: grid; place-items: center; width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 23px; background: var(--green-soft); color: var(--green); font-size: 34px; }
+.completion-card h1 { font-size: clamp(2rem, 5vw, 3.3rem); margin: 11px 0 14px; }
+.completion-card > p { font-size: 13px; }
+.completion-summary { display: grid; grid-template-columns: repeat(3, 1fr); margin: 30px 0 38px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); gap: 15px; text-align: left; }
+.completion-summary div { display: grid; gap: 6px; }.completion-summary span { color: var(--muted); font-size: 10px; }.completion-summary strong { font-size: 12px; }
