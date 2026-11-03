@@ -258,4 +258,16 @@ const QUIZ_BANKS = {
     {q:"Why split a large task into functions?",o:["Each smaller part is easier to test and maintain","It guarantees zero bugs","It removes the need for names","It makes all code identical"],a:0},
     {q:"What should you do if a function returns an unexpected result?",o:["Check its inputs, logic and return statement","Delete the entire project immediately","Ignore the result","Change the computer clock"],a:0}
   ],
+structures: [
+    {q:"What is object-oriented programming centred around?",o:["Objects that combine data and behaviour","Only repeating loops","Only numeric calculations","Web page colours"],a:0},
+    {q:"What is a class?",o:["A blueprint for creating objects","A single loop iteration","A compiler error","A text file extension"],a:0},
+    {q:"What is an object?",o:["An instance created from a class","A comment in source code","A condition that is false","A file download"],a:0},
+    {q:"What is encapsulation?",o:["Keeping data and related operations together and controlling access","Repeating a loop","Sorting numbers only","Installing an IDE"],a:0},
+    {q:"What is inheritance in OOP?",o:["A class can derive features from another class","A variable changes its name randomly","A loop runs twice","A list becomes a string"],a:0},
+    {q:"What is a dictionary/map commonly used for?",o:["Storing key-value pairs","Drawing a flowchart only","Repeating code","Compiling Java"],a:0},
+    {q:"What is a pointer in languages such as C++?",o:["A value that refers to a memory address","A loop condition","A string character","A Java package"],a:0},
+    {q:"What is a constructor commonly used for?",o:["Initialising a newly created object","Ending the operating system","Sorting every array","Creating an internet connection"],a:0},
+    {q:"Why choose a suitable data structure?",o:["It affects how data is stored and accessed","It changes the language into another language","It guarantees the app has no bugs","It replaces testing"],a:0},
+    {q:"What is a useful first step when learning a complex concept like OOP?",o:["Build a small example and observe how it works","Memorise code without running it","Skip the basics","Write the whole operating system"],a:0}
+  ],
 
