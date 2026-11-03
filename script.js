@@ -689,6 +689,37 @@ function startQuiz(key, index) {
     state.attempts[id] = { count, lockUntil: Date.now() + cooldownMs(count) };
     saveState();
   }
+ const course = COURSES[key];
+  const step = course.steps[index];
+  const pool = QUIZ_BANKS[quizBankForStep(index)];
+
+  // Random questions in random order, with randomly ordered options.
+  activeQuiz = shuffled(pool).slice(0, QUESTIONS_PER_TEST).map((item) => {
+    const order = shuffled(item.o.map((text, i) => ({ text, right: i === item.a })));
+    return { q: item.q, options: order.map((x) => x.text), correct: order.findIndex((x) => x.right) };
+  });
+  const bank = activeQuiz;
+
+  $("quizBreadcrumb").textContent = `${course.name} · ${step[0]}`;
+  $("quizTitle").textContent = `${step[0]} test`;
+  $("quizDescription").textContent =
+    `${course.name} · 10 questions · 1 point each. Score at least 7/10 to pass and unlock the next topic.`;
+
+  $("quizQuestions").innerHTML = bank.map((item, qIndex) => {
+    const options = item.options;
+
+    return `<fieldset class="quiz-question">
+      <legend><span>Q${qIndex + 1}.</span> ${safeText(item.q)}</legend>
+      <div class="quiz-options">
+        ${options.map((option, optIndex) =>
+          `<label class="quiz-option">
+            <input type="radio" name="q${qIndex}" value="${optIndex}" required>
+            <span>${safeText(option)}</span>
+          </label>`
+        ).join("")}
+      </div>
+    </fieldset>`;
+  }).join("");
 
 
 
