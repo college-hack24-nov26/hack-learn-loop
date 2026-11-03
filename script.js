@@ -632,6 +632,27 @@ return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-lock
           </div>
           <span class="status-pill ${isDone ? "status-done" : locked ? "status-locked" : hasPassed ? "status-done" : "status-ready"}">${status}</span>
         </div>
+<p>${safeText(step[1])}</p>
+        <div class="resource-links">
+          <a href="https://www.youtube.com/results?search_query=${search}" target="_blank" rel="noopener noreferrer">▶ Video lessons <span>↗</span></a>
+          <a href="https://www.google.com/search?q=${encodeURIComponent(course.name + " " + step[0] + " official documentation tutorial")}" target="_blank" rel="noopener noreferrer">↗ Reading & docs</a>
+        </div>
+        <div class="milestone-footer">${action}</div>
+      </div>
+    </article>`;
+  }).join("");
+
+  $("milestoneList").querySelectorAll("[data-test]").forEach((button) =>
+    button.addEventListener("click", () =>
+      startQuiz(key, Number(button.dataset.test))
+    )
+  );
+
+  $("milestoneList").querySelectorAll("[data-complete]").forEach((button) =>
+    button.addEventListener("click", () =>
+      completeMilestone(key, Number(button.dataset.complete))
+    )
+  );
 
 
 
