@@ -236,3 +236,13 @@ const QUIZ_BANKS = {
   ],
   control: [
     {q:"What does an if statement do?",o:["Runs code when a condition is true","Always repeats code ten times","Stores a list","Defines a class"],a:0},
+    {q:"What is the purpose of else?",o:["Provides an alternative branch when the if condition is false","Declares a string","Ends every program","Creates a variable automatically"],a:0},
+    {q:"Which operator commonly checks equality in conditions?",o:["==","= only","++","//"],a:0},
+    {q:"What is a loop used for?",o:["Repeating a block of code","Naming a class","Storing one value only","Importing a font"],a:0},
+    {q:"When is a for loop often useful?",o:["When iterating over a sequence or a known range","Only when creating a website","Only for declaring variables","When no code should run"],a:0},
+    {q:"What is a while loop commonly based on?",o:["A condition that is checked repeatedly","The colour of the editor","The size of the monitor","A file name"],a:0},
+    {q:"What is an infinite loop?",o:["A loop that does not reach its stopping condition","A loop that runs exactly once","A function with no name","A list with no values"],a:0},
+    {q:"Why use conditions in a number guessing game?",o:["To decide whether a guess is too high, too low, or correct","To install the programming language","To save the monitor settings","To turn every number into text"],a:0},
+    {q:"What does a logical AND generally require?",o:["Both conditions to be true","At least one condition to be false","No conditions at all","A loop to finish first"],a:0},
+    {q:"What is a good way to test a conditional program?",o:["Try inputs that exercise each branch","Test only one input forever","Remove all conditions","Never check the output"],a:0}
+  ],
