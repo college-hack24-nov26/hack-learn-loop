@@ -574,5 +574,28 @@ function openRoadmap(key) {
   if (!COURSES[key] || !state.user) return;
 
   state.currentCourse = key;
+const course = COURSES[key];
+  const p = progress(key);
+  const done = completedIndexes(key);
+  const passed = passedIndexes(key);
+
+  $("breadcrumbCourse").textContent = course.name;
+  $("roadmapTag").textContent =
+    `${course.category.toUpperCase()} · LEARNING PATH`;
+  $("roadmapTitle").textContent = `${course.name} roadmap`;
+  $("roadmapDescription").textContent = course.longDescription;
+
+  $("roadmapPercent").textContent = `${p.percent}%`;
+  $("roadmapBar").style.width = `${p.percent}%`;
+  $("roadmapProgressText").textContent =
+    `${p.done} of ${p.total} milestones completed`;
+  $("stepCount").textContent = `${p.done} / ${p.total} complete`;
+
+  $("milestoneList").innerHTML = course.steps.map((step, index) => {
+    const isDone = done.includes(index);
+    const unlocked = index === 0 || done.includes(index - 1);
+    const locked = !isDone && !unlocked;
+    const hasPassed = passed.includes(index);
+
 
 
