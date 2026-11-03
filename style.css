@@ -255,3 +255,13 @@ p { color: var(--muted); }
   .roadmap-hero { grid-template-columns: 1fr; gap: 18px; }
   .roadmap-progress-card { max-width: none; }
 }
+@media (max-width: 600px) {
+  .app-shell { width: calc(100% - 28px); }
+  .site-header { height: 70px; }.brand { font-size: 19px; }.brand-mark { transform: scale(.9) rotate(-8deg); }
+  .user-chip { gap: 6px; font-size: 11px; }.avatar { width: 28px; height: 28px; }.header-actions { gap: 9px; }
+  .view { padding: 25px 0 38px; }
+  .login-view.active { min-height: auto; padding-top: 28px; }.login-copy h1 { font-size: 2.75rem; }.lead { font-size: 14px; }
+  .trust-points { font-size: 12px; gap: 10px; }.auth-panel { padding: 24px 20px; border-radius: 22px; }
+  .welcome-view { padding-top: 18px; }
+  .welcome-banner { display: block; min-height: auto; padding: 28px 23px; }.welcome-banner h1 { font-size: 2.2rem; }.welcome-banner p { font-size: 12px; }.banner-art { display: none; }
+  .section-heading { margin-top: 31px; align-items: start; flex-direction: column; gap: 14px; }.stats-grid { grid-template-columns: 1fr; gap: 10px; }
