@@ -596,6 +596,23 @@ const course = COURSES[key];
     const unlocked = index === 0 || done.includes(index - 1);
     const locked = !isDone && !unlocked;
     const hasPassed = passed.includes(index);
+ const status = isDone
+      ? "Completed"
+      : locked
+        ? "Locked"
+        : hasPassed
+          ? "Test passed"
+          : "Ready to start";
+
+    const icon = isDone
+      ? "✓"
+      : locked
+        ? "⌑"
+        : String(index + 1).padStart(2, "0");
+
+    const search = encodeURIComponent(step[2]);
+
+    const action = isDone
 
 
 
