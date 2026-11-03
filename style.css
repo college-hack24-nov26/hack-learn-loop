@@ -265,3 +265,10 @@ p { color: var(--muted); }
   .welcome-view { padding-top: 18px; }
   .welcome-banner { display: block; min-height: auto; padding: 28px 23px; }.welcome-banner h1 { font-size: 2.2rem; }.welcome-banner p { font-size: 12px; }.banner-art { display: none; }
   .section-heading { margin-top: 31px; align-items: start; flex-direction: column; gap: 14px; }.stats-grid { grid-template-columns: 1fr; gap: 10px; }
+.stat-card { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; column-gap: 12px; padding: 15px; }.stat-icon { grid-row: span 2; margin: 0; }.stat-label { grid-column: 2; align-self: end; }.stat-card strong { grid-column: 3; grid-row: 1 / span 2; font-size: 26px; }.stat-card small { grid-column: 2; align-self: start; }.stat-progress { grid-column: 2 / 4; margin-top: 9px; }
+  .course-heading { align-items: stretch; }.course-tools, .search-box { width: 100%; }.course-grid { grid-template-columns: 1fr; gap: 12px; }.course-card { min-height: 280px; padding: 21px; }
+  .site-footer { margin-top: 32px; font-size: 9px; }
+  .roadmap-hero { padding: 22px 18px; }.roadmap-meta { gap: 8px 12px; }.roadmap-content-heading { align-items: start; flex-direction: column; gap: 12px; margin-top: 30px; }
+  .milestone-list:before { left: 17px; }.milestone { grid-template-columns: 36px minmax(0,1fr); gap: 9px; }.milestone-index { width: 36px; height: 36px; border-radius: 12px; font-size: 10px; }.milestone.is-done .milestone-index { font-size: 16px; }
+  .milestone-body { padding: 16px 13px; border-radius: 15px; }.milestone-title-row { flex-direction: column; gap: 6px; }.milestone h3 { font-size: 15px; }.milestone-body > p { font-size: 11px; }
+  .milestone-footer { align-items: start; flex-direction: column; gap: 10px; }.practice-tip { max-width: 100%; }.resource-links { gap: 6px; }.resource-links a { padding: 7px 8px; font-size: 9px; }
