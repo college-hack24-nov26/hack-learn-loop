@@ -64,3 +64,65 @@ steps: [
       "Publish a project and write a README"
     ]
   },
+cpp: {
+    name: "C++",
+    short: "C++",
+    color: "#d94c4c",
+    tint: "red",
+    category: "DSA · Systems · Games",
+    level: "Beginner",
+    duration: "6 milestones",
+    description:
+      "Learn core programming concepts and build a foundation for problem-solving and DSA.",
+    longDescription:
+      "Move from your first C++ program to core language concepts and a small project.",
+    outcomes: [
+      "Understand core syntax",
+      "Work with functions and arrays",
+      "Use the STL in a mini project"
+    ],
+    steps: [
+      [
+        "Setup & First Program",
+        "Install a compiler or IDE and run your first C++ program.",
+        "c++ install compiler hello world",
+        "Compile and run a program that prints a message."
+      ],
+      [
+        "Variables, I/O & Operators",
+        "Learn data types, cin, cout, and arithmetic operators.",
+        "c++ variables input output operators",
+        "Build a program that accepts input and calculates a result."
+      ],
+      [
+        "Control Flow & Loops",
+        "Use if, switch, for, and while statements.",
+        "c++ if else loops beginner",
+        "Create a menu-driven calculator."
+      ],
+      [
+        "Functions, Arrays & Strings",
+        "Split problems into functions and work with collections of values.",
+        "c++ functions arrays strings beginner",
+        "Write a function that searches an array."
+      ],
+      [
+        "Pointers & OOP",
+        "Understand pointers, classes, objects, and constructors.",
+        "c++ pointers classes objects beginner",
+        "Model a simple real-world object using a class."
+      ],
+      [
+        "STL + Mini Project",
+        "Use vector, map, and sort in a small application.",
+        "c++ stl vector map beginner project",
+        "Build a small score tracker or console game."
+      ]
+    ],
+    next: [
+      "Practise DSA: arrays, trees, and graphs",
+      "Solve problems on coding practice platforms",
+      "Join beginner programming contests",
+      "Build a C++ project and document it"
+    ]
+  },
