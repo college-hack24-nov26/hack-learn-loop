@@ -317,4 +317,11 @@ control: [
     {q:"What is a common way to add an item to a list?",o:["Use the list's append/add operation","Rename the list","Restart the computer","Delete the index"],a:0},
     {q:"What is recursion?",o:["A function calling itself","A loop with no condition","A variable with two names","A file with no extension"],a:0}
   ],
+ structures: [
+    {q:"What is a method in OOP?",o:["A function that belongs to a class or object","A type of monitor","A comment style","A network protocol"],a:0},
+    {q:"What is an attribute (property) of an object?",o:["A piece of data stored in the object","A kind of loop","A compiler setting","A keyboard shortcut"],a:0},
+    {q:"What is polymorphism?",o:["Different objects responding to the same call in their own way","Turning text into numbers","Sorting a list","Installing two languages"],a:0},
+    {q:"What is a stack typically known for?",o:["Last in, first out (LIFO) order","First in, first out order only","Random order only","No order and no data"],a:0},
+    {q:"What is a queue typically known for?",o:["First in, first out (FIFO) order","Last in, first out order only","Only storing numbers","Only storing text"],a:0}
+  ],
 
