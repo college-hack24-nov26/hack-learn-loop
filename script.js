@@ -833,6 +833,16 @@ function bindEvents() {
     if(!emailValid){$("loginError").textContent="Please enter a valid email address.";$("emailInput").focus();return;}
     if(password.length<3){$("loginError").textContent="Enter at least 3 characters to continue in this demo.";$("passwordInput").focus();return;}
     if(register){if(state.accounts[email]){$("loginError").textContent="An account profile with this email already exists. Choose Sign in.";return;}
+state.accounts[email]={user:{name,email},done:{},quizPassed:{},lastCompletedCourse:null};activateAccount(email,false);saveState();showToast("Demo profile created.");
+    }else{if(!state.accounts[email]){$("loginError").textContent="No profile found for this email in this browser. Choose Create account first.";return;}activateAccount(email,false);saveState();}
+    $("loginError").textContent="";$("passwordInput").value="";renderDashboard();
+  });
+  $("registerModeBtn").addEventListener("click",()=>setAuthMode("register"));$("loginModeBtn").addEventListener("click",()=>setAuthMode("login"));
+  $("themeToggle").addEventListener("click",()=>{state.theme=state.theme==="dark"?"light":"dark";applyTheme();saveState();});
+  $("logoutBtn").addEventListener("click",logout);
+  $("brandHome").addEventListener("click",event=>{event.preventDefault();state.user?renderDashboard():showView("login");});
+  $("browseCoursesBtn").addEventListener("click",()=>$ ("courseSection").scrollIntoView({behavior:"smooth",block:"start"}));
+  $("courseSearch").addEventListener("input",renderCourses);
 
 
 
