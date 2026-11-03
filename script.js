@@ -324,4 +324,12 @@ control: [
     {q:"What is a stack typically known for?",o:["Last in, first out (LIFO) order","First in, first out order only","Random order only","No order and no data"],a:0},
     {q:"What is a queue typically known for?",o:["First in, first out (FIFO) order","Last in, first out order only","Only storing numbers","Only storing text"],a:0}
   ],
+project: [
+    {q:"What is a commit in Git?",o:["A saved snapshot of your changes","A deleted project","A type of loop","A programming language"],a:0},
+    {q:"Why handle invalid user input in a project?",o:["So the program does not crash on unexpected input","So the program becomes slower","So users cannot use it","So the code becomes shorter"],a:0},
+    {q:"What is refactoring?",o:["Improving code structure without changing what it does","Adding bugs on purpose","Deleting the whole project","Changing the programming language"],a:0},
+    {q:"What is a good reason to share a project on GitHub?",o:["To show your work and get feedback","To hide it from everyone","To stop it from running","To avoid learning"],a:0},
+    {q:"What is the benefit of planning features before coding?",o:["You build in a clear order and avoid wasted effort","You never need to test","You can skip the idea","Code writes itself"],a:0}
+  ]
+};
 
