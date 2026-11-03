@@ -849,6 +849,11 @@ $("backToDashboard").addEventListener("click",renderDashboard);$("roadmapBackBot
   $("printCertificate").addEventListener("click",()=>window.print());
   $("quizForm").addEventListener("submit",submitQuiz);$("quitQuizBtn").addEventListener("click",()=>openRoadmap(state.currentCourse));
 }
-
+function init() {
+  loadState();bindEvents();setAuthMode("register");
+  if(state.user&&state.user.name){$("nameInput").value=state.user.name;$("emailInput").value=state.user.email||"";renderDashboard();}
+  else{setSignedInUI();showView("login");}
+}
+document.addEventListener("DOMContentLoaded",init);
 
 
