@@ -653,6 +653,42 @@ return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-lock
       completeMilestone(key, Number(button.dataset.complete))
     )
   );
+$("milestoneList").querySelectorAll("[data-undo]").forEach((button) =>
+    button.addEventListener("click", () =>
+      undoMilestone(key, Number(button.dataset.undo))
+    )
+  );
+
+  showView("roadmap");
+}
+
+function startQuiz(key, index) {
+  const done = completedIndexes(key);
+  const unlocked = index === 0 || done.includes(index - 1);
+
+  if (!unlocked) {
+    showToast("Complete the previous milestone first.");
+    return;
+  }
+
+  state.currentCourse = key;
+  state.currentStep = index;
+
+  const alreadyPassed = passedIndexes(key).includes(index);
+  const wait = lockRemaining(key, index);
+  if (wait > 0 && !alreadyPassed) {
+    showToast(`Next attempt available in ${formatWait(wait)}. Use the time to review the topic.`);
+    openRoadmap(key);
+    return;
+  }
+
+  // Starting a test counts as an attempt, so quitting to peek at the questions is not free.
+  if (!alreadyPassed) {
+    const id = attemptKey(key, index);
+    const count = ((state.attempts[id] && state.attempts[id].count) || 0) + 1;
+    state.attempts[id] = { count, lockUntil: Date.now() + cooldownMs(count) };
+    saveState();
+  }
 
 
 
