@@ -535,4 +535,19 @@ grid.innerHTML = cards.map(([key, course]) => {
       </div>
     </article>`;
   }).join("");
+$("emptyCourses").classList.toggle("hidden", cards.length > 0);
+
+  grid.querySelectorAll("[data-course]").forEach((card) => {
+    const open = () => openRoadmap(card.dataset.course);
+    card.addEventListener("click", open);
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
+}
+
+
 
