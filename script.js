@@ -561,5 +561,18 @@ function renderDashboard() {
   if (!state.user) return showView("login");
 
   setSignedInUI();
+const firstName = state.user.name.trim().split(/\s+/)[0];
+  $("welcomeText").textContent =
+    `Welcome back, ${firstName}. Choose a skill, follow a roadmap, and build momentum one milestone at a time.`;
+
+  renderStats();
+  renderCourses();
+  showView("welcome");
+}
+
+function openRoadmap(key) {
+  if (!COURSES[key] || !state.user) return;
+
+  state.currentCourse = key;
 
 
