@@ -283,4 +283,24 @@ project: [
     {q:"Which is a useful sign of a successful beginner project?",o:["It works for its intended task and you can explain the code","It has the most lines","It uses every language at once","It has no documentation"],a:0}
   ]
 };
+function quizBankForStep(index) {
+  return ["setup", "variables", "control", "functions", "structures", "project"][index] || "setup";
+}
+
+// Extra questions so every test is drawn at random from a pool larger than 10.
+const EXTRA_QUESTIONS = {
+  setup: [
+    {q:"What is syntax in programming?",o:["The rules for how code must be written","The speed of the processor","The size of a file","The brand of the laptop"],a:0},
+    {q:"What is a terminal or command line used for?",o:["Typing commands to interact with the computer","Drawing pictures only","Charging the battery","Changing the keyboard colour"],a:0},
+    {q:"Why are code comments useful?",o:["They explain code to human readers","They make the code run faster","They fix errors automatically","They delete unused files"],a:0},
+    {q:"What is an interpreter generally responsible for?",o:["Running code line by line or statement by statement","Building computer hardware","Designing logos","Creating Wi-Fi networks"],a:0},
+    {q:"Why is it good to install the language from its official website?",o:["It is more likely to be safe and up to date","It makes the computer faster","It removes the need to learn","It works without a computer"],a:0}
+  ],
+  variables: [
+    {q:"What does it mean to declare a variable?",o:["To create it so it can hold a value","To delete it permanently","To print it on paper","To turn it into a loop"],a:0},
+    {q:"What is type conversion (casting)?",o:["Changing a value from one data type to another","Changing the keyboard layout","Renaming a file","Restarting the program"],a:0},
+    {q:"What happens to a variable's value when you assign it a new value?",o:["The old value is replaced","Both values are kept at once","The program stops","The variable becomes a function"],a:0},
+    {q:"Which of these is usually a bad variable name?",o:["x1y2z3q","studentAge","totalMarks","userName"],a:0},
+    {q:"What is the result of combining two strings (concatenation)?",o:["One longer string","A number","A Boolean only","An error every time"],a:0}
+  ],
 
