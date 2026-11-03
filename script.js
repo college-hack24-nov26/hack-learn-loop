@@ -420,4 +420,18 @@ function saveState() {
     showToast("Progress could not be saved in this browser.");
   }
 }
+function applyTheme() {
+  document.documentElement.dataset.theme = state.theme;
+  $("themeIcon").textContent = state.theme === "dark" ? "☀" : "☾";
+  $("themeToggle").setAttribute("aria-label", state.theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+}
+
+function showView(name) {
+  document.querySelectorAll(".view").forEach((view) => {
+    const active = view.id === `view-${name}`;
+    view.classList.toggle("active", active);
+    view.setAttribute("aria-hidden", String(!active));
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
