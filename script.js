@@ -510,4 +510,17 @@ function renderCourses() {
       .toLowerCase()
       .includes(query)
   );
+grid.innerHTML = cards.map(([key, course]) => {
+    const p = progress(key);
+    const icons = { python: "Py", cpp: "C++", java: "J" };
+
+    return `<article class="course-card ${course.tint}" data-course="${key}" tabindex="0" role="button" aria-label="Open ${safeText(course.name)} learning path">
+      <div class="course-card-top">
+        <span class="course-icon">${icons[key]}</span>
+        <span class="course-level">${course.level}</span>
+      </div>
+      <div class="course-category">${safeText(course.category)}</div>
+      <h3>${safeText(course.name)} programming</h3>
+      <p>${safeText(course.description)}</p>
+      <div class="course-card-bottom">
 
