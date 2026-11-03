@@ -451,4 +451,17 @@ function safeText(value) {
     "'": "&#39;"
   })[char]);
 }
+function completedIndexes(key) {
+  const values = Array.isArray(state.done[key]) ? state.done[key] : [];
+  return [...new Set(values.filter((n) =>
+    Number.isInteger(n) && n >= 0 && n < COURSES[key].steps.length
+  ))].sort((a, b) => a - b);
+}
+
+function passedIndexes(key) {
+  const values = Array.isArray(state.quizPassed[key]) ? state.quizPassed[key] : [];
+  return [...new Set(values.filter((n) =>
+    Number.isInteger(n) && n >= 0 && n < COURSES[key].steps.length
+  ))].sort((a, b) => a - b);
+}
 
