@@ -21,3 +21,40 @@
       <div class="header-actions">
         <span class="user-chip hidden" id="userChip"><span class="avatar" id="avatarInitial">A</span><span id="headerName">Learner</span></span>
         <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme"><span id="themeIcon">☾</span></button>
+        <button class="text-button hidden" id="logoutBtn" type="button">Log out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view login-view active" id="view-login">
+        <div class="login-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER, WITH A CLEARER PLAN</div>
+          <h1>Small steps.<br><span class="gradient-text">Real progress.</span></h1>
+          <p class="lead">A practical learning roadmap for students who want to build skills, make projects, and move towards their first opportunity.</p>
+          <div class="trust-points">
+            <div><span class="check-icon">✓</span><span>Beginner-friendly learning paths</span></div>
+            <div><span class="check-icon">✓</span><span>Progress you can actually track</span></div>
+            <div><span class="check-icon">✓</span><span>Next steps beyond the basics</span></div>
+          </div>
+          <div class="login-decoration" aria-hidden="true">
+            <div class="floating-card code-card"><span class="window-dots">● ● ●</span><code><b>function</b> buildFuture() {<br>&nbsp; keepLearning();<br>&nbsp; shipProjects();<br>}</code></div>
+            <div class="floating-card progress-card"><span class="mini-label">YOUR MOMENTUM</span><strong>01 <span>/ 06</span></strong><div class="mini-progress"><i></i></div><small>One step at a time</small></div>
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          </div>
+        </div>
+        <div class="auth-panel panel">
+          <div class="panel-topline"><span class="panel-kicker">YOUR LEARNING ACCOUNT</span><span class="demo-pill">LOCAL DEMO</span></div>
+          <h2 id="authTitle">Create your account</h2>
+          <p class="muted" id="authDescription">Create a profile to save your own roadmap and test scores.</p>
+          <div class="auth-mode-switch"><button class="auth-mode active" id="registerModeBtn" type="button">Create account</button><button class="auth-mode" id="loginModeBtn" type="button">Sign in</button></div>
+          <form id="loginForm" novalidate>
+            <div id="nameField"><label for="nameInput">Your name</label>
+            <input id="nameInput" name="name" autocomplete="name" maxlength="60" placeholder="e.g. Aarav Sharma" required></div>
+            <label for="emailInput">College or personal email</label>
+            <input id="emailInput" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <label for="passwordInput">Demo passcode (not verified)</label>
+            <input id="passwordInput" name="password" type="password" autocomplete="current-password" minlength="3" placeholder="At least 3 characters" required>
+            <p class="form-error" id="loginError" role="alert"></p>
+            <button class="button button-primary button-full" id="authSubmitBtn" type="submit">Create account <span aria-hidden="true">↗</span></button>
+          </form>
+
