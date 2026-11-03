@@ -807,6 +807,12 @@ function renderCompletion(key) {
   const course=COURSES[key]; $("completedCourseName").textContent=course.name; $("completedUserName").textContent=state.user.name;
   $("completionMessage").textContent=`You've completed all six milestones in the ${course.name} learning path, including the topic tests. Take a moment to celebrate, then choose a practical next step.`;
   $("nextSteps").innerHTML=course.next.map((item,index)=>`<div class="next-step"><span>0${index+1}</span><p>${safeText(item)}</p></div>`).join(""); showView("completion");
+}
+function renderCertificate(key) {
+  const course=COURSES[key]; if(!course||progress(key).done!==progress(key).total){showToast("Complete all milestones to view this certificate.");return;}
+  $("certificateName").textContent=state.user.name; $("certificateCourse").textContent=`${course.name} Programming Roadmap`;
+  $("certificateDate").textContent=`Completed on ${new Date().toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"})}`; showView("certificate");
+}
 
 
 
