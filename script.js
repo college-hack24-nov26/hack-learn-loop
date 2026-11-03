@@ -720,6 +720,39 @@ function startQuiz(key, index) {
       </div>
     </fieldset>`;
   }).join("");
+$("quizError").textContent = "";
+  $("quizResult").classList.add("hidden");
+  $("quizForm").classList.remove("hidden");
+
+  showView("quiz");
+}
+
+function submitQuiz(event) {
+  event.preventDefault();
+
+  const key = state.currentCourse;
+  const index = state.currentStep;
+  const bank = activeQuiz;
+
+  if (!key || index === null || !bank) return;
+
+  const answers = bank.map((_, qIndex) => {
+    const selected = document.querySelector(
+      `input[name="q${qIndex}"]:checked`
+    );
+    return selected ? Number(selected.value) : null;
+  });
+
+  if (answers.some((answer) => answer === null)) {
+    $("quizError").textContent =
+      "Please answer all 10 questions before submitting.";
+    return;
+  }
+
+  const score = answers.reduce((total, answer, qIndex) => {
+    const correct = bank[qIndex].correct;
+    return total + (answer === correct ? 1 : 0);
+  }, 0);
 
 
 
