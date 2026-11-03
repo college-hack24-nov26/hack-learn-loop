@@ -813,6 +813,15 @@ function renderCertificate(key) {
   $("certificateName").textContent=state.user.name; $("certificateCourse").textContent=`${course.name} Programming Roadmap`;
   $("certificateDate").textContent=`Completed on ${new Date().toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"})}`; showView("certificate");
 }
+function setAuthMode(mode) {
+  state.authMode=mode; const register=mode==="register";
+  $("authTitle").textContent=register?"Create your account":"Welcome back";
+  $("authDescription").textContent=register?"Create a profile to save your own roadmap and test scores.":"Sign in with the email you used to create your local demo profile.";
+  $("nameField").classList.toggle("hidden",!register); $("nameInput").required=register;
+  $("authSubmitBtn").innerHTML=register?"Create account <span aria-hidden=\"true\">↗</span>":"Sign in <span aria-hidden=\"true\">↗</span>";
+  $("registerModeBtn").classList.toggle("active",register); $("loginModeBtn").classList.toggle("active",!register); $("loginError").textContent="";
+}
+function logout() {
 
 
 
