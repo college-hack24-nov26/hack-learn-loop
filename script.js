@@ -355,4 +355,27 @@ function lockRemaining(key, index) {
   const entry = state.attempts[attemptKey(key, index)];
   return entry && entry.lockUntil ? Math.max(0, entry.lockUntil - Date.now()) : 0;
 }
+function cooldownMs(count) {
+  return RETRY_COOLDOWN_MIN[Math.min(count, RETRY_COOLDOWN_MIN.length) - 1] * 60000;
+}
+function formatWait(ms) {
+  const mins = Math.ceil(ms / 60000);
+  return mins >= 60 ? `${Math.ceil(mins / 60)} hour(s)` : `${mins} minute${mins === 1 ? "" : "s"}`;
+}
+
+function normalizeEmail(email) { return String(email || "").trim().toLowerCase(); }
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (saved && typeof saved === "object") {
+      state.accounts = saved.accounts && typeof saved.accounts === "object" ? saved.accounts : {};
+      state.theme = saved.theme === "dark" ? "dark" : "light";
+      const activeEmail = normalizeEmail(saved.activeEmail);
+      if (activeEmail && state.accounts[activeEmail]) activateAccount(activeEmail, false);
+    } else {
+      const old = JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY) || localStorage.getItem("skillpath") || "null");
+      if (old && old.user && old.user.email) {
+        const email = normalizeEmail(old.user.email);
+        state.accounts[email] = { user: old.user, done: old.done || {}, quizPassed: {}, lastCompletedCourse: old.lastCompletedCourse || null };
 
