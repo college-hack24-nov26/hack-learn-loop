@@ -523,4 +523,16 @@ grid.innerHTML = cards.map(([key, course]) => {
       <h3>${safeText(course.name)} programming</h3>
       <p>${safeText(course.description)}</p>
       <div class="course-card-bottom">
+ <span>◷ ${course.duration}</span>
+        <span>${p.done}/${p.total} done</span>
+      </div>
+      <div class="progress-track">
+        <i style="width:${p.percent}%"></i>
+      </div>
+      <div class="course-card-action">
+        <span>${p.done ? "Continue learning" : "Explore roadmap"}</span>
+        <span class="arrow">↗</span>
+      </div>
+    </article>`;
+  }).join("");
 
