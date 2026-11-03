@@ -226,3 +226,16 @@ p { color: var(--muted); }
 .completion-card > p { font-size: 13px; }
 .completion-summary { display: grid; grid-template-columns: repeat(3, 1fr); margin: 30px 0 38px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); gap: 15px; text-align: left; }
 .completion-summary div { display: grid; gap: 6px; }.completion-summary span { color: var(--muted); font-size: 10px; }.completion-summary strong { font-size: 12px; }
+.completion-card h2 { font-size: 19px; }
+.next-steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; text-align: left; margin: 20px 0 27px; }
+.next-step { display: flex; align-items: start; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-soft); }.next-step span { color: var(--primary); font-size: 10px; font-weight: 800; }.next-step p { margin: 0; font-size: 11px; line-height: 1.6; color: var(--text); }
+.completion-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.certificate-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.certificate { background: #fffdf7; color: #202942; padding: 14px; box-shadow: 0 15px 50px #1c2d4a16; }
+.certificate-border { min-height: 590px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 35px 25px; border: 2px solid #c8a85c; outline: 1px solid #e4d3a7; outline-offset: -9px; }
+.certificate-brand { display: flex; align-items: center; gap: 8px; color: #263e78; font: 800 13px Manrope, sans-serif; letter-spacing: .16em; }
+.small-mark { grid-template-columns: repeat(2, 6px); gap: 2px; }.small-mark span { width: 6px; height: 6px; border-radius: 2px; }
+.certificate-eyebrow { margin-top: 35px; color: #9c7c32; font-size: 11px; letter-spacing: .25em; font-weight: 800; }
+.certificate-rule { display: flex; align-items: center; gap: 12px; width: min(360px, 90%); margin: 17px 0; color: #c8a85c; }.certificate-rule:before, .certificate-rule:after { content: ""; height: 1px; flex: 1; background: #d7bf83; }
+.certificate-intro, .certificate-body { color: #747987; font: 14px Georgia, serif; }.certificate-intro { margin: 8px 0; }
+.certificate h1 { color: #233a70; font: italic 40px Georgia, serif; letter-spacing: -.02em; margin: 10px 0 18px; overflow-wrap: anywhere; }
