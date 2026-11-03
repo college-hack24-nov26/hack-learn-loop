@@ -87,3 +87,20 @@ p { color: var(--muted); }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 45px; border: 1px solid transparent; border-radius: 12px; padding: 11px 17px; cursor: pointer; text-decoration: none; font-weight: 700; font-size: 13px; transition: transform .18s, box-shadow .18s, background .18s, border-color .18s; }
 .button:hover { transform: translateY(-2px); }
 .button:active { transform: translateY(0); }
+.button-primary { background: var(--primary); color: #fff; box-shadow: 0 8px 18px color-mix(in srgb, var(--primary) 24%, transparent); }
+.button-primary:hover { background: var(--primary-dark); }
+.button-secondary { background: var(--surface); border-color: var(--line-strong); color: var(--text); }
+.button-secondary:hover { border-color: var(--primary); color: var(--primary); }
+.button-light { background: #fff; color: #2447b5; }
+.button-light:hover { box-shadow: 0 10px 25px #080e2333; }
+.button-quiet { background: transparent; border-color: var(--line); color: var(--muted); }
+.button-small { min-height: 36px; padding: 8px 12px; border-radius: 10px; font-size: 12px; white-space: nowrap; }
+.button-full { width: 100%; margin-top: 6px; min-height: 50px; }
+.panel { border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--surface); box-shadow: var(--shadow); }
+.login-view { min-height: calc(100vh - 89px); display: none; grid-template-columns: minmax(0, 1.1fr) minmax(340px, .8fr); gap: clamp(30px, 7vw, 90px); align-items: center; padding: 44px 0 60px; }
+.login-view.active { display: grid; }
+.login-copy { position: relative; padding: 15px 0 30px; }
+.login-copy h1 { margin-bottom: 19px; }
+.trust-points { display: grid; gap: 13px; margin-top: 26px; color: var(--text); font-size: 13px; font-weight: 600; }
+.trust-points > div { display: flex; align-items: center; gap: 11px; }
+.check-icon { display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 800; }
