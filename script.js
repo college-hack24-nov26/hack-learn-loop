@@ -222,3 +222,17 @@ const QUIZ_BANKS = {
     {q:"Which habit helps beginners learn programming?",o:["Run small examples and change them gradually","Copy code without reading it","Avoid testing code","Learn every language at once"],a:0},
     {q:"What is program output?",o:["The result produced when a program runs","The keyboard layout","The editor theme","The file extension only"],a:0}
   ],
+ variables: [
+    {q:"What is a variable used for?",o:["Naming a value that a program can use","Cooling the CPU","Connecting to Wi-Fi","Drawing a window"],a:0},
+    {q:"Which value is an integer?",o:["42","3.14","\"hello\"","true/false only"],a:0},
+    {q:"Which value is a string?",o:["\"SkillPath\"","27","2.5","false"],a:0},
+    {q:"What is the purpose of input in a program?",o:["To receive data from a user or another source","To erase all variables","To close the compiler","To guarantee the answer is correct"],a:0},
+    {q:"What is an assignment statement generally used for?",o:["Giving a value to a variable","Repeating a loop forever","Declaring the computer broken","Opening a browser tab"],a:0},
+    {q:"Which is a floating-point number?",o:["6.25","6 as an integer only","\"6.25\" as text","a variable name"],a:0},
+    {q:"Why are meaningful variable names useful?",o:["They make code easier to understand","They make every program faster automatically","They remove the need for testing","They prevent all syntax errors"],a:0},
+    {q:"What is a Boolean value used to represent?",o:["True or false","A paragraph of text only","A decimal number only","A folder path only"],a:0},
+    {q:"If age stores 19, what kind of information is age most likely holding?",o:["A numeric value","An image","A sound file","A loop"],a:0},
+    {q:"What can happen when a program tries to combine incompatible data types?",o:["It may produce an error or an unintended result","The computer must shut down","The code becomes encrypted","The monitor changes size"],a:0}
+  ],
+  control: [
+    {q:"What does an if statement do?",o:["Runs code when a condition is true","Always repeats code ten times","Stores a list","Defines a class"],a:0},
