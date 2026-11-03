@@ -130,3 +130,20 @@ p { color: var(--muted); }
 .auth-panel input, .search-box input { width: 100%; border: 1px solid var(--line-strong); background: var(--surface-soft); color: var(--text); border-radius: 11px; outline: none; transition: border .2s, box-shadow .2s; }
 .auth-panel input { min-height: 47px; padding: 12px 14px; margin-bottom: 17px; }
 .auth-panel input:focus, .search-box:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 13%, transparent); }
+.auth-panel input::placeholder, .search-box input::placeholder { color: #929cb0; }
+.form-error { min-height: 8px; margin: -6px 0 9px; color: #d94747; font-size: 12px; }
+.fine-print { font-size: 10px !important; line-height: 1.6; margin: 18px 0 0 !important; }
+.fine-print span { color: var(--primary); margin-right: 4px; }
+.welcome-view { padding-top: 30px; }
+.welcome-banner { position: relative; min-height: 310px; padding: clamp(28px, 5vw, 55px); border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; background: linear-gradient(115deg, #142448 0%, #233b77 56%, #4b4c9c 100%); color: #fff; isolation: isolate; }
+.welcome-banner:before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; right: -130px; top: -300px; background: #7d87ff1f; z-index: -1; }
+.welcome-copy { max-width: 600px; position: relative; z-index: 2; }
+.eyebrow.light { color: #bdcaff; }
+.welcome-banner h1 { font-size: clamp(2rem, 4.5vw, 3.4rem); margin-bottom: 15px; max-width: 640px; }
+.welcome-banner p { color: #d0d8ef; max-width: 490px; line-height: 1.75; margin-bottom: 25px; }
+.banner-art { min-height: 220px; position: relative; display: grid; place-items: center; }
+.art-window { width: 230px; height: 175px; border: 1px solid #ffffff38; border-radius: 16px; background: linear-gradient(140deg, #ffffff20, #ffffff0b); box-shadow: 0 24px 50px #080e2940; backdrop-filter: blur(8px); transform: rotate(5deg); position: relative; animation: slow-float 6s ease-in-out infinite; }
+.art-window-top { height: 34px; display: flex; align-items: center; gap: 5px; padding: 0 13px; border-bottom: 1px solid #ffffff20; }
+.art-window-top i { display: block; width: 6px; height: 6px; border-radius: 50%; background: #ff9e9a; }
+.art-window-top i:nth-child(2) { background: #ffd16d; }.art-window-top i:nth-child(3) { background: #61dcb2; }
+.art-code { padding: 16px 19px; color: #e4e9ff; font: 12px/2.1 ui-monospace, SFMono-Regular, Consolas, monospace; }
