@@ -338,6 +338,1571 @@ const EXTRA_QUESTIONS = {
 };
 Object.keys(EXTRA_QUESTIONS).forEach((k) => QUIZ_BANKS[k].push(...EXTRA_QUESTIONS[k]));
 
+// Language-specific question banks. Each row: [question, CORRECT answer, wrong, wrong, wrong]. Options are shuffled when a test starts.
+const LANG_ROWS = {
+"python": {
+"setup": [
+[
+"Which function prints text on the screen in Python?",
+"print()",
+"echo()",
+"cout",
+"System.out.println()"
+],
+[
+"Which symbol starts a single-line comment in Python?",
+"#",
+"//",
+"--",
+"/*"
+],
+[
+"Which file extension do Python programs normally use?",
+".py",
+".java",
+".cpp",
+".pyt"
+],
+[
+"What does print(\"Hello\") display on the screen?",
+"Hello",
+"\"Hello\" with the quote marks",
+"print Hello",
+"Nothing"
+],
+[
+"Which command shows the installed Python version?",
+"python --version",
+"python --delete",
+"python install.exe",
+"py --format"
+],
+[
+"Which free editor is often used for Python in beginner tutorials?",
+"VS Code",
+"Microsoft Paint",
+"Windows Media Player",
+"Calculator"
+],
+[
+"Python is called an interpreted language because",
+"an interpreter runs the code line by line",
+"it can only run on paper",
+"it never needs a computer",
+"it has no syntax"
+],
+[
+"What is pip used for?",
+"Installing Python packages",
+"Printing text",
+"Compiling C++",
+"Formatting a disk"
+],
+[
+"What is the output of print(2 + 3)?",
+"5",
+"23",
+"2 + 3",
+"An error"
+],
+[
+"In Python, what is indentation used for?",
+"Defining blocks of code",
+"Making text bold",
+"Writing comments",
+"Naming variables"
+],
+[
+"Which prints an empty line?",
+"print()",
+"blank()",
+"newline",
+"print(null)"
+],
+[
+"What does print(\"Hi\", \"there\") display by default?",
+"Hi there",
+"Hithere",
+"Hi,there",
+"An error"
+]
+],
+"variables": [
+[
+"Which line correctly creates a variable in Python?",
+"x = 5",
+"5 = x",
+"int x = 5;",
+"make x 5"
+],
+[
+"What data type is 3.14 in Python?",
+"float",
+"int",
+"str",
+"bool"
+],
+[
+"What data type does the input() function return?",
+"str (text)",
+"Always int",
+"Always float",
+"Nothing"
+],
+[
+"Which converts the text \"10\" into an integer?",
+"int(\"10\")",
+"str(\"10\")",
+"text(\"10\")",
+"num(\"10\")"
+],
+[
+"What is the output of print(\"Hi\" + \"Bro\")?",
+"HiBro",
+"Hi Bro",
+"Hi+Bro",
+"2"
+],
+[
+"What does 7 // 2 give in Python?",
+"3",
+"3.5",
+"4",
+"1"
+],
+[
+"What is 2 ** 3 in Python?",
+"8",
+"6",
+"5",
+"23"
+],
+[
+"What is 10 % 3 in Python?",
+"1",
+"3",
+"0",
+"3.33"
+],
+[
+"Which are the two Boolean values in Python?",
+"True and False",
+"true and false",
+"yes and no",
+"on and off"
+],
+[
+"Which is a valid variable name in Python?",
+"my_age",
+"2age",
+"my-age",
+"my age"
+],
+[
+"What does the f in f\"Hello {name}\" do?",
+"Lets you place variables inside { }",
+"Makes the text a float",
+"Turns it into a comment",
+"Opens a file"
+],
+[
+"Which function tells you the type of a value?",
+"type()",
+"kind()",
+"what()",
+"typeof()"
+]
+],
+"control": [
+[
+"Which keyword means \"else if\" in Python?",
+"elif",
+"elseif",
+"else if",
+"elsif"
+],
+[
+"What does range(3) produce?",
+"0, 1, 2",
+"1, 2, 3",
+"0, 1, 2, 3",
+"3 only"
+],
+[
+"Which loop repeats as long as a condition is True?",
+"while",
+"def",
+"import",
+"print"
+],
+[
+"Which operator checks if two values are equal?",
+"==",
+"=",
+":=",
+"=>"
+],
+[
+"What does break do inside a loop?",
+"Exits the loop immediately",
+"Skips one iteration",
+"Restarts the program",
+"Defines a function"
+],
+[
+"What does continue do inside a loop?",
+"Skips to the next iteration",
+"Stops the program",
+"Exits the loop",
+"Deletes the loop"
+],
+[
+"Which character ends the first line of an if statement?",
+":",
+";",
+".",
+"{"
+],
+[
+"What does for i in range(1, 4): print(i) print?",
+"1 2 3",
+"0 1 2 3",
+"1 2 3 4",
+"0 1 2"
+],
+[
+"The operator and gives True when",
+"Both conditions are True",
+"Either condition is True",
+"Neither is True",
+"Only the first is True"
+],
+[
+"Which is an infinite loop?",
+"while True: with no break",
+"for i in range(3):",
+"if x > 0:",
+"print(\"hi\")"
+],
+[
+"Which checks that x is NOT equal to 5?",
+"x != 5",
+"x =! 5",
+"x <> 5",
+"x not= 5"
+],
+[
+"If x = 4, what does: if x > 5: print(\"big\") else: print(\"small\") print?",
+"small",
+"big",
+"Nothing",
+"An error"
+]
+],
+"functions": [
+[
+"Which keyword defines a function in Python?",
+"def",
+"function",
+"fun",
+"func"
+],
+[
+"Which keyword sends a value back from a function?",
+"return",
+"give",
+"send",
+"output"
+],
+[
+"How do you call a function named hello?",
+"hello()",
+"call hello",
+"hello",
+"run hello"
+],
+[
+"What does a function without a return statement give back?",
+"None",
+"0",
+"An empty string",
+"An error"
+],
+[
+"What does print(add(2, 3)) show if def add(a, b): return a + b?",
+"5",
+"23",
+"add",
+"None"
+],
+[
+"Why do we use functions?",
+"To reuse code and keep it organised",
+"To make code slower",
+"To avoid using variables",
+"To stop all errors"
+],
+[
+"A variable created inside a function is",
+"Local to that function",
+"Global everywhere",
+"A constant",
+"Printed automatically"
+],
+[
+"Which function gives the length of a string?",
+"len()",
+"length()",
+"size()",
+"count()"
+],
+[
+"In def greet(name=\"Bro\"), what is name=\"Bro\"?",
+"A default parameter",
+"A loop",
+"A list",
+"A class"
+],
+[
+"What does *args let a function do?",
+"Accept any number of positional arguments",
+"Multiply numbers",
+"Create a pointer",
+"Write a comment"
+],
+[
+"What is a lambda in Python?",
+"A small anonymous function",
+"A type of loop",
+"A class",
+"A module"
+],
+[
+"The values you pass into a function when calling it are called",
+"Arguments",
+"Comments",
+"Loops",
+"Modules"
+]
+],
+"structures": [
+[
+"Which creates a list in Python?",
+"[1, 2, 3]",
+"(1, 2, 3)",
+"{1, 2, 3}",
+"<1, 2, 3>"
+],
+[
+"What is the index of the first item in a list?",
+"0",
+"1",
+"-1",
+"2"
+],
+[
+"Which method adds an item to the end of a list?",
+"append()",
+"add()",
+"push()",
+"insert_end()"
+],
+[
+"A dictionary stores data as",
+"Key-value pairs",
+"Only numbers",
+"Only text",
+"Only functions"
+],
+[
+"How do you read the value for key \"name\" in a dictionary d?",
+"d[\"name\"]",
+"d.name",
+"d(name)",
+"d->name"
+],
+[
+"Which method removes and returns the last item of a list?",
+"pop()",
+"cut()",
+"delete()",
+"remove_last()"
+],
+[
+"What does len([4, 5, 6]) return?",
+"3",
+"2",
+"4",
+"6"
+],
+[
+"What does fruits[-1] give for fruits = [\"a\", \"b\", \"c\"]?",
+"c",
+"a",
+"b",
+"An error"
+],
+[
+"Which of these cannot be changed after it is created?",
+"A tuple",
+"A list",
+"A dictionary",
+"A set"
+],
+[
+"How do you loop over the keys of a dictionary d?",
+"for k in d:",
+"for k in d.length:",
+"foreach k in d",
+"while d:"
+],
+[
+"What does nums.sort() do to nums = [3, 1, 2]?",
+"Makes it [1, 2, 3]",
+"Makes it [3, 2, 1]",
+"Deletes it",
+"Prints it"
+],
+[
+"How do you check if the key \"name\" exists in dictionary d?",
+"\"name\" in d",
+"d.has(\"name\")",
+"d.contains(\"name\")",
+"d.find(\"name\")"
+]
+],
+"project": [
+[
+"Which keyword creates a class in Python?",
+"class",
+"object",
+"struct",
+"define"
+],
+[
+"What is the special constructor method name in a Python class?",
+"__init__",
+"constructor",
+"init",
+"new"
+],
+[
+"What does self refer to inside a class method?",
+"The current object",
+"A loop",
+"A module",
+"A global variable"
+],
+[
+"What is an object?",
+"An instance of a class",
+"A type of loop",
+"A comment",
+"A file extension"
+],
+[
+"How do you create an object of class Car?",
+"my_car = Car()",
+"my_car = new Car()",
+"Car my_car",
+"create Car"
+],
+[
+"A function that belongs to a class is called a",
+"Method",
+"Loop",
+"Module",
+"Comment"
+],
+[
+"What does inheritance let a class do?",
+"Reuse features of another class",
+"Run faster",
+"Delete variables",
+"Skip loops"
+],
+[
+"Which module helps pick random questions in a quiz game?",
+"random",
+"rand",
+"shuffle",
+"quiz"
+],
+[
+"Which line imports the random module?",
+"import random",
+"include random",
+"using random",
+"get random"
+],
+[
+"What is a variable that belongs to an object called?",
+"An attribute",
+"A loop",
+"A comment",
+"A module"
+],
+[
+"What does if __name__ == \"__main__\": do?",
+"Runs code only when the file is run directly",
+"Imports a module",
+"Defines a class",
+"Stops the program"
+],
+[
+"What is a good way to build a calculator mini project?",
+"Break it into small functions and test each",
+"Write it all in one line",
+"Never run it until finished",
+"Avoid using variables"
+]
+]
+},
+"cpp": {
+"setup": [
+[
+"Which header is needed to use cout?",
+"<iostream>",
+"<stdio>",
+"<cout>",
+"<print>"
+],
+[
+"Which function is the starting point of a C++ program?",
+"main()",
+"start()",
+"run()",
+"begin()"
+],
+[
+"What ends most statements in C++?",
+";",
+".",
+":",
+","
+],
+[
+"C++ is a compiled language. What does that mean?",
+"The compiler turns source code into machine code before running",
+"It is run line by line by an interpreter",
+"It cannot run on computers",
+"It needs no source code"
+],
+[
+"Which line prints Hello in C++?",
+"cout << \"Hello\";",
+"print(\"Hello\")",
+"echo \"Hello\"",
+"System.out.println(\"Hello\");"
+],
+[
+"Which file extension is used for C++ source files?",
+".cpp",
+".py",
+".java",
+".cppx"
+],
+[
+"What does #include do?",
+"Adds a header or library to your program",
+"Starts a loop",
+"Creates a variable",
+"Prints text"
+],
+[
+"What does using namespace std; let you do?",
+"Write cout instead of std::cout",
+"Run Java code",
+"Compile faster",
+"Create objects"
+],
+[
+"Which symbols start a single-line comment in C++?",
+"//",
+"#",
+"--",
+"<!--"
+],
+[
+"Which is a popular C++ compiler?",
+"g++",
+"pip",
+"javac",
+"Notepad"
+],
+[
+"What does return 0; at the end of main usually signal?",
+"The program finished successfully",
+"An infinite loop",
+"An error",
+"A restart"
+],
+[
+"What does endl do with cout?",
+"Moves to a new line",
+"Clears the screen",
+"Exits the program",
+"Declares a variable"
+]
+],
+"variables": [
+[
+"Which type stores whole numbers in C++?",
+"int",
+"double",
+"char",
+"bool"
+],
+[
+"Which type is best for decimal numbers like 3.14?",
+"double",
+"int",
+"char",
+"bool"
+],
+[
+"Which line reads a value typed by the user into x?",
+"cin >> x;",
+"cout >> x;",
+"read x;",
+"input(x);"
+],
+[
+"Which type holds a single character?",
+"char",
+"string",
+"int",
+"double"
+],
+[
+"Which are the two values of a bool?",
+"true and false",
+"True and False",
+"yes and no",
+"1 and 2 only"
+],
+[
+"What is 7 / 2 when both are int?",
+"3",
+"3.5",
+"4",
+"2"
+],
+[
+"What does the % operator give?",
+"The remainder of a division",
+"The percentage",
+"The square root",
+"The product"
+],
+[
+"Which type stores text such as \"Bro\"?",
+"string",
+"int",
+"char only",
+"double"
+],
+[
+"Which is the correct output operator with cout?",
+"<<",
+">>",
+"=",
+"->"
+],
+[
+"What is the value of 5 + 3 * 2?",
+"11",
+"16",
+"10",
+"13"
+],
+[
+"What does x++ do?",
+"Adds 1 to x",
+"Doubles x",
+"Subtracts 1 from x",
+"Deletes x"
+],
+[
+"What does cin >> age; do?",
+"Reads the user's input into age",
+"Prints age",
+"Declares age",
+"Deletes age"
+]
+],
+"control": [
+[
+"Which is the correct if syntax in C++?",
+"if (x > 5) { }",
+"if x > 5:",
+"if x > 5 then",
+"if [x > 5]"
+],
+[
+"Which is a correct for loop that runs 5 times?",
+"for (int i = 0; i < 5; i++)",
+"for i in range(5)",
+"for (i < 5)",
+"loop 5 times"
+],
+[
+"What does break do inside a switch case?",
+"Stops execution from falling into the next case",
+"Restarts the switch",
+"Deletes the case",
+"Prints the case"
+],
+[
+"Which loop always runs its body at least once?",
+"do-while",
+"while",
+"for",
+"if"
+],
+[
+"Which operator checks equality in C++?",
+"==",
+"=",
+":=",
+"=>"
+],
+[
+"What does && mean in C++?",
+"Logical AND",
+"Logical OR",
+"Logical NOT",
+"Assignment"
+],
+[
+"What does || mean in C++?",
+"Logical OR",
+"Logical AND",
+"Logical NOT",
+"Comparison"
+],
+[
+"How many times does for (int i = 0; i < 3; i++) run?",
+"3",
+"2",
+"4",
+"Infinite"
+],
+[
+"What does default do in a switch?",
+"Runs if no case matches",
+"Runs first always",
+"Ends the program",
+"Declares a variable"
+],
+[
+"In an else if chain, which block runs?",
+"The first one whose condition is true",
+"All of them",
+"The last one only",
+"None of them"
+],
+[
+"A while loop keeps running while",
+"Its condition is true",
+"Its condition is false",
+"It is the first line",
+"The program is compiled"
+],
+[
+"Which statement skips to the next loop iteration?",
+"continue",
+"skip",
+"next",
+"pass"
+]
+],
+"functions": [
+[
+"Which declares a function that takes two ints and returns an int?",
+"int add(int a, int b)",
+"add(int a, int b) int",
+"function add(a, b)",
+"def add(a, b)"
+],
+[
+"What does the return type void mean?",
+"The function returns nothing",
+"The function returns 0",
+"The function returns text",
+"The function is deleted"
+],
+[
+"Which declares an array of 5 integers?",
+"int nums[5];",
+"int nums(5);",
+"array nums = 5;",
+"nums int[5];"
+],
+[
+"What is the index of the first array element?",
+"0",
+"1",
+"-1",
+"5"
+],
+[
+"For an array of size 5, what is the last valid index?",
+"4",
+"5",
+"6",
+"1"
+],
+[
+"Which gives the length of a string called name?",
+"name.length()",
+"len(name)",
+"length(name)",
+"name.count"
+],
+[
+"How do you join \"Hi \" and name in C++?",
+"\"Hi \" + name",
+"\"Hi \" . name",
+"\"Hi \" & name",
+"join(\"Hi \", name)"
+],
+[
+"What is a function prototype?",
+"A declaration telling the compiler the function exists",
+"A type of loop",
+"A comment",
+"A variable"
+],
+[
+"Which function parameter lets the function change the caller's variable?",
+"int &x (reference)",
+"int x",
+"const int x",
+"void x"
+],
+[
+"What is recursion?",
+"A function calling itself",
+"A loop with no end",
+"A type of array",
+"A compiler error"
+],
+[
+"Which reads a whole line including spaces?",
+"getline(cin, s);",
+"cin >> s;",
+"read(s);",
+"cin.line(s);"
+],
+[
+"What is nums[1] for int nums[3] = {1, 2, 3};?",
+"2",
+"1",
+"3",
+"0"
+]
+],
+"structures": [
+[
+"What does a pointer store?",
+"A memory address",
+"A decimal number",
+"A comment",
+"Only text"
+],
+[
+"Which operator gives the address of a variable?",
+"&",
+"*",
+"#",
+"@"
+],
+[
+"What does * do on a pointer, as in *p?",
+"Gets the value at the address",
+"Gets the address",
+"Multiplies it",
+"Deletes it"
+],
+[
+"Which declares an int pointer?",
+"int* p;",
+"int p*;",
+"pointer int p;",
+"int &&p;"
+],
+[
+"Which keyword creates a class in C++?",
+"class",
+"object",
+"def",
+"module"
+],
+[
+"What is a constructor?",
+"A special function that runs when an object is created",
+"A loop",
+"A comment",
+"A variable type"
+],
+[
+"What is an object?",
+"An instance of a class",
+"A header file",
+"A compiler",
+"A loop"
+],
+[
+"What does public mean for class members?",
+"They can be accessed from outside the class",
+"Only the class can use them",
+"They are deleted",
+"They are constants"
+],
+[
+"How do you access the member name of an object obj?",
+"obj.name",
+"obj->>name",
+"obj::name only",
+"name(obj)"
+],
+[
+"What does nullptr mean?",
+"A pointer that points to nothing",
+"The number 1",
+"A string",
+"A function"
+],
+[
+"What is a destructor's name based on?",
+"The class name with ~ in front",
+"The word destroy",
+"The word end",
+"The main function"
+],
+[
+"What does private mean for class members?",
+"Only the class itself can access them",
+"Anyone can access them",
+"They are constants",
+"They are deleted"
+]
+],
+"project": [
+[
+"What is a vector in C++?",
+"A resizable array",
+"A fixed-size array",
+"A type of loop",
+"A pointer"
+],
+[
+"Which adds an item to the end of a vector v?",
+"v.push_back(x);",
+"v.add(x);",
+"v.append(x);",
+"v.insert_end(x);"
+],
+[
+"Which header is needed for vector?",
+"<vector>",
+"<list>",
+"<array.h>",
+"<vec>"
+],
+[
+"What does a map store?",
+"Key-value pairs",
+"Only numbers",
+"Only one value",
+"Only pointers"
+],
+[
+"Which header provides sort?",
+"<algorithm>",
+"<sorting>",
+"<iostream>",
+"<string>"
+],
+[
+"How do you get the number of items in vector v?",
+"v.size()",
+"v.length",
+"len(v)",
+"count(v)"
+],
+[
+"Which sorts vector v in ascending order?",
+"sort(v.begin(), v.end());",
+"v.sort();",
+"sort(v);",
+"order(v);"
+],
+[
+"Which is a range-based for loop over vector v?",
+"for (int x : v)",
+"for x in v:",
+"foreach x in v",
+"for (x of v)"
+],
+[
+"Which header is needed for map?",
+"<map>",
+"<dictionary>",
+"<pair>",
+"<keys>"
+],
+[
+"How are keys ordered in a std::map by default?",
+"Sorted",
+"Random",
+"Reverse of insertion",
+"Not stored"
+],
+[
+"How do you read the value for key \"age\" in map m?",
+"m[\"age\"]",
+"m.age",
+"m(age)",
+"m->>age"
+],
+[
+"Why use the STL in a mini project?",
+"It gives ready-made tested containers and algorithms",
+"It makes programs slower",
+"It replaces main()",
+"It removes the need to compile"
+]
+]
+},
+"java": {
+"setup": [
+[
+"What is the entry point of a Java program?",
+"public static void main(String[] args)",
+"start()",
+"main() only",
+"run()"
+],
+[
+"Which line prints Hello in Java?",
+"System.out.println(\"Hello\");",
+"print(\"Hello\")",
+"cout << \"Hello\";",
+"echo \"Hello\""
+],
+[
+"Which file extension do Java source files use?",
+".java",
+".py",
+".cpp",
+".class only"
+],
+[
+"What does JDK stand for?",
+"Java Development Kit",
+"Java Data Key",
+"Just Do Kode",
+"Java Debug Kernel"
+],
+[
+"Which command compiles a Java file?",
+"javac",
+"java -compile",
+"compilejava",
+"jc"
+],
+[
+"What does the JVM do?",
+"Runs Java bytecode",
+"Edits images",
+"Writes comments",
+"Connects to Wi-Fi"
+],
+[
+"What must match the file name for a public class?",
+"The class name",
+"The folder name",
+"The main method",
+"The package only"
+],
+[
+"Which symbols start a single-line comment in Java?",
+"//",
+"#",
+"--",
+"<!--"
+],
+[
+"Compiled Java bytecode is saved in which kind of file?",
+".class",
+".exe",
+".txt",
+".py"
+],
+[
+"Which command runs the compiled class HelloWorld?",
+"java HelloWorld",
+"javac HelloWorld",
+"run HelloWorld.java",
+"start HelloWorld"
+],
+[
+"Why do you need the JDK rather than just the JRE to build programs?",
+"The JDK includes the compiler javac",
+"The JRE is paid",
+"The JDK is only for Python",
+"They are identical"
+],
+[
+"What ends most statements in Java?",
+";",
+".",
+":",
+","
+]
+],
+"variables": [
+[
+"Which type stores whole numbers in Java?",
+"int",
+"String",
+"double",
+"boolean"
+],
+[
+"Which type stores text in Java?",
+"String",
+"text",
+"char only",
+"str"
+],
+[
+"Which type is best for decimal numbers?",
+"double",
+"int",
+"boolean",
+"char"
+],
+[
+"Which line creates a Scanner for keyboard input?",
+"Scanner sc = new Scanner(System.in);",
+"Scanner sc = input();",
+"Scanner sc = System.read();",
+"scan sc = new Input();"
+],
+[
+"Which reads an int from a Scanner called sc?",
+"sc.nextInt()",
+"sc.readInt",
+"sc.int()",
+"sc.getNumber"
+],
+[
+"What are the two boolean values in Java?",
+"true and false",
+"True and False",
+"yes and no",
+"1 and 0 only"
+],
+[
+"How do you write a single char value?",
+"'A'",
+"\"A\" only",
+"A",
+"(A)"
+],
+[
+"What is 10 / 4 when both are int?",
+"2",
+"2.5",
+"3",
+"4"
+],
+[
+"What is 10 % 3 in Java?",
+"1",
+"3",
+"0",
+"3.33"
+],
+[
+"What does the final keyword do to a variable?",
+"Makes it a constant",
+"Makes it faster",
+"Deletes it",
+"Makes it global"
+],
+[
+"Which is a primitive type?",
+"int",
+"String",
+"Scanner",
+"ArrayList"
+],
+[
+"What does \"Hello \" + name do if name is a String?",
+"Joins the two texts",
+"Subtracts them",
+"Causes an error",
+"Prints only name"
+]
+],
+"control": [
+[
+"Which compares the contents of two Strings correctly?",
+"a.equals(b)",
+"a = b",
+"a.same(b)",
+"a >> b"
+],
+[
+"Which is a correct for loop that runs 5 times?",
+"for (int i = 0; i < 5; i++)",
+"for i in range(5)",
+"for (i < 5)",
+"loop 5"
+],
+[
+"What does break do inside a loop or switch?",
+"Exits it immediately",
+"Skips one iteration",
+"Restarts the program",
+"Declares a variable"
+],
+[
+"Which is an enhanced for loop over String[] names?",
+"for (String s : names)",
+"for s in names:",
+"foreach s in names",
+"for (s of names)"
+],
+[
+"Which loop runs its body at least once?",
+"do-while",
+"while",
+"for",
+"if"
+],
+[
+"What does && mean in Java?",
+"Logical AND",
+"Logical OR",
+"Logical NOT",
+"Assignment"
+],
+[
+"What happens with if (x = 5) when x is an int?",
+"Compile error, because = assigns and is not a boolean",
+"It compares x and 5",
+"It prints 5",
+"It always runs"
+],
+[
+"How many times does for (int i = 1; i <= 4; i++) run?",
+"4",
+"3",
+"5",
+"Infinite"
+],
+[
+"What does continue do in a loop?",
+"Skips to the next iteration",
+"Exits the loop",
+"Stops the program",
+"Deletes the loop"
+],
+[
+"What does default do in a switch?",
+"Runs if no case matches",
+"Always runs first",
+"Ends the program",
+"Declares a variable"
+],
+[
+"Which operator checks equality of two ints?",
+"==",
+"=",
+":=",
+"=>"
+],
+[
+"In an else if chain, which block runs?",
+"The first one whose condition is true",
+"All of them",
+"The last one only",
+"None"
+]
+],
+"functions": [
+[
+"Which declares a method that returns the sum of two ints?",
+"static int add(int a, int b)",
+"add(int a, int b) int",
+"function add(a, b)",
+"def add(a, b)"
+],
+[
+"What does void mean as a return type?",
+"The method returns nothing",
+"The method returns 0",
+"The method returns text",
+"The method is private"
+],
+[
+"Which creates an int array of size 5?",
+"int[] nums = new int[5];",
+"int nums = [5];",
+"array nums(5);",
+"int nums[] = 5;"
+],
+[
+"How do you get the length of an array nums?",
+"nums.length",
+"nums.length()",
+"nums.size()",
+"len(nums)"
+],
+[
+"How do you get the length of a String s?",
+"s.length()",
+"s.length",
+"len(s)",
+"s.size"
+],
+[
+"What is the first index of an array?",
+"0",
+"1",
+"-1",
+"5"
+],
+[
+"What is method overloading?",
+"Same method name with different parameters",
+"A method calling itself",
+"Deleting a method",
+"Two classes with one name"
+],
+[
+"What does return do?",
+"Sends a value back from a method",
+"Starts a loop",
+"Prints a value",
+"Creates a variable"
+],
+[
+"What does it mean that Strings are immutable?",
+"They cannot be changed after creation",
+"They are always empty",
+"They are numbers",
+"They are faster than ints"
+],
+[
+"Which converts a String s to upper case?",
+"s.toUpperCase()",
+"s.upper()",
+"upper(s)",
+"s.caps()"
+],
+[
+"For an array of size 5, what is the last valid index?",
+"4",
+"5",
+"6",
+"1"
+],
+[
+"What does s.charAt(0) return?",
+"The first character",
+"The length",
+"The last character",
+"The whole String"
+]
+],
+"structures": [
+[
+"Which keyword creates a class in Java?",
+"class",
+"object",
+"def",
+"struct"
+],
+[
+"How do you create a Dog object?",
+"Dog d = new Dog();",
+"Dog d = Dog;",
+"new d = Dog;",
+"d = create Dog"
+],
+[
+"Which keyword makes one class inherit another?",
+"extends",
+"implements",
+"inherits",
+"uses"
+],
+[
+"Which keyword is used by a class to follow an interface?",
+"implements",
+"extends",
+"inherits",
+"follows"
+],
+[
+"What is polymorphism?",
+"The same method behaving differently for different objects",
+"Having many files",
+"Using many loops",
+"Deleting objects"
+],
+[
+"What is special about a constructor's name?",
+"It matches the class name and has no return type",
+"It starts with new",
+"It is always main",
+"It must be void"
+],
+[
+"What is encapsulation?",
+"Hiding data with private fields and using getters and setters",
+"Making everything public",
+"Looping through data",
+"Compiling code"
+],
+[
+"What does this refer to?",
+"The current object",
+"The parent class",
+"The main method",
+"A static variable"
+],
+[
+"What does super refer to?",
+"The parent class",
+"The current object",
+"The main method",
+"A loop"
+],
+[
+"What is true about an abstract class?",
+"It cannot be instantiated directly",
+"It cannot have methods",
+"It must be final",
+"It is the same as an int"
+],
+[
+"What does the @Override annotation show?",
+"The method overrides a parent method",
+"The method is deleted",
+"The method is private",
+"The method is a loop"
+],
+[
+"What does an interface describe?",
+"A contract of methods a class must implement",
+"A loop",
+"A variable",
+"A comment"
+]
+],
+"project": [
+[
+"What is an ArrayList?",
+"A resizable list",
+"A fixed-size array",
+"A type of loop",
+"A class keyword"
+],
+[
+"Which import is needed for ArrayList?",
+"import java.util.ArrayList;",
+"import java.list;",
+"include ArrayList;",
+"using ArrayList;"
+],
+[
+"How do you add \"x\" to ArrayList<String> list?",
+"list.add(\"x\");",
+"list.push(\"x\");",
+"list.append(\"x\");",
+"list[] = \"x\";"
+],
+[
+"How do you get the first item of an ArrayList called list?",
+"list.get(0)",
+"list[0]",
+"list.first",
+"list(0)"
+],
+[
+"What does a HashMap store?",
+"Key-value pairs",
+"Only numbers",
+"Only one value",
+"Only arrays"
+],
+[
+"Which adds the key \"a\" with value 1 to HashMap map?",
+"map.put(\"a\", 1);",
+"map.add(\"a\", 1);",
+"map[\"a\"] = 1;",
+"map.set(\"a\")"
+],
+[
+"How do you read the value for key \"a\" in HashMap map?",
+"map.get(\"a\")",
+"map[\"a\"]",
+"map.a",
+"map.read(\"a\")"
+],
+[
+"How do you get the number of items in an ArrayList?",
+"list.size()",
+"list.length",
+"len(list)",
+"list.count"
+],
+[
+"What does ArrayList<String> mean?",
+"A list that holds Strings",
+"A list of numbers",
+"A map",
+"An array of size String"
+],
+[
+"What happens if you put the same key in a HashMap twice?",
+"The newer value replaces the old one",
+"An error always occurs",
+"Both are kept",
+"The program stops"
+],
+[
+"What does list.remove(0) do?",
+"Removes the item at index 0",
+"Removes the last item",
+"Clears the list",
+"Adds 0"
+],
+[
+"Why use ArrayList instead of an array?",
+"Its size can grow and shrink",
+"It is always faster",
+"It cannot hold objects",
+"It has no methods"
+]
+]
+}
+};
+const LANG_BANKS = {};
+Object.keys(LANG_ROWS).forEach((lang) => {
+  LANG_BANKS[lang] = {};
+  Object.keys(LANG_ROWS[lang]).forEach((topic) => {
+    LANG_BANKS[lang][topic] = LANG_ROWS[lang][topic].map((r) => ({ q: r[0], o: r.slice(1), a: 0 }));
+  });
+});
+
 const QUESTIONS_PER_TEST = 10;
 const RETRY_COOLDOWN_MIN = [2, 10, 60]; // wait after 1st, 2nd, 3rd+ unsuccessful attempt
 
@@ -710,7 +2275,8 @@ function startQuiz(key, index) {
 
   const course = COURSES[key];
   const step = course.steps[index];
-  const pool = QUIZ_BANKS[quizBankForStep(index)];
+  // Use this language's own questions; fall back to the general bank if one is missing.
+  const pool = (LANG_BANKS[key] && LANG_BANKS[key][quizBankForStep(index)]) || QUIZ_BANKS[quizBankForStep(index)];
 
   // Random questions in random order, with randomly ordered options.
   activeQuiz = shuffled(pool).slice(0, QUESTIONS_PER_TEST).map((item) => {
