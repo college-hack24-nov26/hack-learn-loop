@@ -19,7 +19,7 @@ const COURSES = {
       "Work with data and functions",
       "Build a beginner project"
     ],
-steps: [
+    steps: [
       [
         "Setup & Hello World",
         "Install Python and VS Code, then run your first print() statement.",
@@ -64,7 +64,8 @@ steps: [
       "Publish a project and write a README"
     ]
   },
-cpp: {
+
+  cpp: {
     name: "C++",
     short: "C++",
     color: "#d94c4c",
@@ -126,7 +127,8 @@ cpp: {
       "Build a C++ project and document it"
     ]
   },
-java: {
+
+  java: {
     name: "Java",
     short: "J",
     color: "#d99022",
@@ -162,7 +164,7 @@ java: {
         "java if else loops beginner",
         "Build a number guessing game."
       ],
-[
+      [
         "Methods, Arrays & Strings",
         "Organise code into methods and work with arrays and strings.",
         "java methods arrays strings beginner",
@@ -189,6 +191,7 @@ java: {
     ]
   }
 };
+
 const STORAGE_KEY = "skillpath_accounts_v2";
 const LEGACY_STORAGE_KEY = "skillpath_pro_v1";
 const $ = (id) => document.getElementById(id);
@@ -222,7 +225,7 @@ const QUIZ_BANKS = {
     {q:"Which habit helps beginners learn programming?",o:["Run small examples and change them gradually","Copy code without reading it","Avoid testing code","Learn every language at once"],a:0},
     {q:"What is program output?",o:["The result produced when a program runs","The keyboard layout","The editor theme","The file extension only"],a:0}
   ],
- variables: [
+    variables: [
     {q:"What is a variable used for?",o:["Naming a value that a program can use","Cooling the CPU","Connecting to Wi-Fi","Drawing a window"],a:0},
     {q:"Which value is an integer?",o:["42","3.14","\"hello\"","true/false only"],a:0},
     {q:"Which value is a string?",o:["\"SkillPath\"","27","2.5","false"],a:0},
@@ -246,7 +249,7 @@ const QUIZ_BANKS = {
     {q:"What does a logical AND generally require?",o:["Both conditions to be true","At least one condition to be false","No conditions at all","A loop to finish first"],a:0},
     {q:"What is a good way to test a conditional program?",o:["Try inputs that exercise each branch","Test only one input forever","Remove all conditions","Never check the output"],a:0}
   ],
-   functions: [
+  functions: [
     {q:"What is a function?",o:["A reusable block of code that performs a task","A computer part","A kind of comment only","A folder on the desktop"],a:0},
     {q:"Why use functions?",o:["To organise code and avoid repeating logic","To make variables impossible","To remove all program output","To replace all data types"],a:0},
     {q:"What is a parameter?",o:["A named input accepted by a function","The colour of the editor","The final output screen","A type of operating system"],a:0},
@@ -258,7 +261,7 @@ const QUIZ_BANKS = {
     {q:"Why split a large task into functions?",o:["Each smaller part is easier to test and maintain","It guarantees zero bugs","It removes the need for names","It makes all code identical"],a:0},
     {q:"What should you do if a function returns an unexpected result?",o:["Check its inputs, logic and return statement","Delete the entire project immediately","Ignore the result","Change the computer clock"],a:0}
   ],
-structures: [
+  structures: [
     {q:"What is object-oriented programming centred around?",o:["Objects that combine data and behaviour","Only repeating loops","Only numeric calculations","Web page colours"],a:0},
     {q:"What is a class?",o:["A blueprint for creating objects","A single loop iteration","A compiler error","A text file extension"],a:0},
     {q:"What is an object?",o:["An instance created from a class","A comment in source code","A condition that is false","A file download"],a:0},
@@ -270,7 +273,7 @@ structures: [
     {q:"Why choose a suitable data structure?",o:["It affects how data is stored and accessed","It changes the language into another language","It guarantees the app has no bugs","It replaces testing"],a:0},
     {q:"What is a useful first step when learning a complex concept like OOP?",o:["Build a small example and observe how it works","Memorise code without running it","Skip the basics","Write the whole operating system"],a:0}
   ],
-project: [
+  project: [
     {q:"What is the purpose of a mini project?",o:["Apply concepts to solve a small, practical problem","Avoid using what you learned","Replace every lesson with theory","Test the keyboard"],a:0},
     {q:"What should a program do before being considered finished?",o:["Be tested with normal and edge-case inputs","Be judged only by its file name","Never be run","Contain as many lines as possible"],a:0},
     {q:"What is a bug?",o:["A flaw that causes incorrect or unexpected behaviour","A required programming language","A project title","A data type"],a:0},
@@ -283,6 +286,7 @@ project: [
     {q:"Which is a useful sign of a successful beginner project?",o:["It works for its intended task and you can explain the code","It has the most lines","It uses every language at once","It has no documentation"],a:0}
   ]
 };
+
 function quizBankForStep(index) {
   return ["setup", "variables", "control", "functions", "structures", "project"][index] || "setup";
 }
@@ -303,7 +307,7 @@ const EXTRA_QUESTIONS = {
     {q:"Which of these is usually a bad variable name?",o:["x1y2z3q","studentAge","totalMarks","userName"],a:0},
     {q:"What is the result of combining two strings (concatenation)?",o:["One longer string","A number","A Boolean only","An error every time"],a:0}
   ],
-control: [
+  control: [
     {q:"What does logical OR generally require?",o:["At least one condition to be true","Both conditions to be false","No conditions","A loop to be infinite"],a:0},
     {q:"What does the break statement commonly do in a loop?",o:["Exits the loop early","Starts the loop again from zero","Deletes the loop variable","Declares a function"],a:0},
     {q:"What does elif / else if allow you to do?",o:["Check another condition when earlier ones are false","Repeat code forever","Define a class","Import a library"],a:0},
@@ -317,14 +321,14 @@ control: [
     {q:"What is a common way to add an item to a list?",o:["Use the list's append/add operation","Rename the list","Restart the computer","Delete the index"],a:0},
     {q:"What is recursion?",o:["A function calling itself","A loop with no condition","A variable with two names","A file with no extension"],a:0}
   ],
- structures: [
+  structures: [
     {q:"What is a method in OOP?",o:["A function that belongs to a class or object","A type of monitor","A comment style","A network protocol"],a:0},
     {q:"What is an attribute (property) of an object?",o:["A piece of data stored in the object","A kind of loop","A compiler setting","A keyboard shortcut"],a:0},
     {q:"What is polymorphism?",o:["Different objects responding to the same call in their own way","Turning text into numbers","Sorting a list","Installing two languages"],a:0},
     {q:"What is a stack typically known for?",o:["Last in, first out (LIFO) order","First in, first out order only","Random order only","No order and no data"],a:0},
     {q:"What is a queue typically known for?",o:["First in, first out (FIFO) order","Last in, first out order only","Only storing numbers","Only storing text"],a:0}
   ],
-project: [
+  project: [
     {q:"What is a commit in Git?",o:["A saved snapshot of your changes","A deleted project","A type of loop","A programming language"],a:0},
     {q:"Why handle invalid user input in a project?",o:["So the program does not crash on unexpected input","So the program becomes slower","So users cannot use it","So the code becomes shorter"],a:0},
     {q:"What is refactoring?",o:["Improving code structure without changing what it does","Adding bugs on purpose","Deleting the whole project","Changing the programming language"],a:0},
@@ -378,7 +382,7 @@ function loadState() {
       if (old && old.user && old.user.email) {
         const email = normalizeEmail(old.user.email);
         state.accounts[email] = { user: old.user, done: old.done || {}, quizPassed: {}, lastCompletedCourse: old.lastCompletedCourse || null };
-activateAccount(email, false);
+        activateAccount(email, false);
       }
     }
   } catch (error) {
@@ -397,6 +401,7 @@ function activateAccount(email, persist = true) {
   state.lastCompletedCourse = account.lastCompletedCourse || null;
   if (persist) saveState();
 }
+
 function syncAccount() {
   if (!state.user) return;
   const email = normalizeEmail(state.user.email);
@@ -408,6 +413,7 @@ function syncAccount() {
     lastCompletedCourse: state.lastCompletedCourse
   };
 }
+
 function saveState() {
   try {
     syncAccount();
@@ -434,6 +440,7 @@ function showView(name) {
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 function showToast(message) {
   const el = $("toast");
   el.textContent = message;
@@ -451,6 +458,7 @@ function safeText(value) {
     "'": "&#39;"
   })[char]);
 }
+
 function completedIndexes(key) {
   const values = Array.isArray(state.done[key]) ? state.done[key] : [];
   return [...new Set(values.filter((n) =>
@@ -464,6 +472,7 @@ function passedIndexes(key) {
     Number.isInteger(n) && n >= 0 && n < COURSES[key].steps.length
   ))].sort((a, b) => a - b);
 }
+
 function progress(key) {
   const total = COURSES[key].steps.length;
   const completed = completedIndexes(key).length;
@@ -488,6 +497,7 @@ function totalProgress() {
     percent: Math.round((done / total) * 100)
   };
 }
+
 function setSignedInUI() {
   const signedIn = Boolean(state.user);
   $("userChip").classList.toggle("hidden", !signedIn);
@@ -510,7 +520,8 @@ function renderCourses() {
       .toLowerCase()
       .includes(query)
   );
-grid.innerHTML = cards.map(([key, course]) => {
+
+  grid.innerHTML = cards.map(([key, course]) => {
     const p = progress(key);
     const icons = { python: "Py", cpp: "C++", java: "J" };
 
@@ -523,7 +534,7 @@ grid.innerHTML = cards.map(([key, course]) => {
       <h3>${safeText(course.name)} programming</h3>
       <p>${safeText(course.description)}</p>
       <div class="course-card-bottom">
- <span>◷ ${course.duration}</span>
+        <span>◷ ${course.duration}</span>
         <span>${p.done}/${p.total} done</span>
       </div>
       <div class="progress-track">
@@ -535,7 +546,8 @@ grid.innerHTML = cards.map(([key, course]) => {
       </div>
     </article>`;
   }).join("");
-$("emptyCourses").classList.toggle("hidden", cards.length > 0);
+
+  $("emptyCourses").classList.toggle("hidden", cards.length > 0);
 
   grid.querySelectorAll("[data-course]").forEach((card) => {
     const open = () => openRoadmap(card.dataset.course);
@@ -561,7 +573,8 @@ function renderDashboard() {
   if (!state.user) return showView("login");
 
   setSignedInUI();
-const firstName = state.user.name.trim().split(/\s+/)[0];
+
+  const firstName = state.user.name.trim().split(/\s+/)[0];
   $("welcomeText").textContent =
     `Welcome back, ${firstName}. Choose a skill, follow a roadmap, and build momentum one milestone at a time.`;
 
@@ -574,7 +587,8 @@ function openRoadmap(key) {
   if (!COURSES[key] || !state.user) return;
 
   state.currentCourse = key;
-const course = COURSES[key];
+
+  const course = COURSES[key];
   const p = progress(key);
   const done = completedIndexes(key);
   const passed = passedIndexes(key);
@@ -596,7 +610,8 @@ const course = COURSES[key];
     const unlocked = index === 0 || done.includes(index - 1);
     const locked = !isDone && !unlocked;
     const hasPassed = passed.includes(index);
- const status = isDone
+
+    const status = isDone
       ? "Completed"
       : locked
         ? "Locked"
@@ -613,7 +628,7 @@ const course = COURSES[key];
     const search = encodeURIComponent(step[2]);
 
     const action = isDone
-? `<span class="completed-note">✓ Milestone completed · Test ${hasPassed ? "passed" : "recorded"}</span>
+      ? `<span class="completed-note">✓ Milestone completed · Test ${hasPassed ? "passed" : "recorded"}</span>
          <button class="button button-quiet undo-button" data-undo="${index}" type="button">Undo</button>`
       : locked
         ? `<span class="locked-note">Pass the previous topic test with at least 7/10 to unlock this topic.</span>`
@@ -622,7 +637,8 @@ const course = COURSES[key];
              ? `<button class="button button-small button-secondary" type="button" disabled>Retry in ${formatWait(lockRemaining(key, index))}</button>`
              : `<button class="button button-small ${hasPassed ? "button-secondary" : "button-primary"}" data-test="${index}" type="button">${hasPassed ? "Retake topic test" : "Take 10-question test"} ${hasPassed ? "↻" : "→"}</button>`}
            ${hasPassed ? `<button class="button button-small button-primary" data-complete="${index}" type="button">Mark complete ✓</button>` : ""}`;
-return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-locked" : ""}">
+
+    return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-locked" : ""}">
       <div class="milestone-index">${icon}</div>
       <div class="milestone-body">
         <div class="milestone-title-row">
@@ -632,9 +648,10 @@ return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-lock
           </div>
           <span class="status-pill ${isDone ? "status-done" : locked ? "status-locked" : hasPassed ? "status-done" : "status-ready"}">${status}</span>
         </div>
-<p>${safeText(step[1])}</p>
+        <p>${safeText(step[1])}</p>
         <div class="resource-links">
-          <a href="https://www.youtube.com/results?search_query=${search}" target="_blank" rel="noopener noreferrer">▶ Video lessons <span>↗</span></a>
+          <a href="https://www.youtube.com/results?search_query=${encodeURIComponent("Bro Code " + step[2])}" target="_blank" rel="noopener noreferrer">▶ Bro Code <span>↗</span></a>
+          <a href="https://www.youtube.com/results?search_query=${encodeURIComponent("CodeWithHarry " + step[2])}" target="_blank" rel="noopener noreferrer">▶ CodeWithHarry <span>↗</span></a>
           <a href="https://www.google.com/search?q=${encodeURIComponent(course.name + " " + step[0] + " official documentation tutorial")}" target="_blank" rel="noopener noreferrer">↗ Reading & docs</a>
         </div>
         <div class="milestone-footer">${action}</div>
@@ -653,7 +670,8 @@ return `<article class="milestone ${isDone ? "is-done" : ""} ${locked ? "is-lock
       completeMilestone(key, Number(button.dataset.complete))
     )
   );
-$("milestoneList").querySelectorAll("[data-undo]").forEach((button) =>
+
+  $("milestoneList").querySelectorAll("[data-undo]").forEach((button) =>
     button.addEventListener("click", () =>
       undoMilestone(key, Number(button.dataset.undo))
     )
@@ -689,7 +707,8 @@ function startQuiz(key, index) {
     state.attempts[id] = { count, lockUntil: Date.now() + cooldownMs(count) };
     saveState();
   }
- const course = COURSES[key];
+
+  const course = COURSES[key];
   const step = course.steps[index];
   const pool = QUIZ_BANKS[quizBankForStep(index)];
 
@@ -720,7 +739,8 @@ function startQuiz(key, index) {
       </div>
     </fieldset>`;
   }).join("");
-$("quizError").textContent = "";
+
+  $("quizError").textContent = "";
   $("quizResult").classList.add("hidden");
   $("quizForm").classList.remove("hidden");
 
@@ -753,7 +773,8 @@ function submitQuiz(event) {
     const correct = bank[qIndex].correct;
     return total + (answer === correct ? 1 : 0);
   }, 0);
- const passed = score >= 7;
+
+  const passed = score >= 7;
 
   if (passed) {
     const values = passedIndexes(key);
@@ -788,7 +809,7 @@ function submitQuiz(event) {
   if (retry) retry.addEventListener("click", () => startQuiz(key, index));
 
   const back = $("quizRoadmapBtn");
-if (back) back.addEventListener("click", () => openRoadmap(key));
+  if (back) back.addEventListener("click", () => openRoadmap(key));
 }
 function completeMilestone(key,index) {
   const course=COURSES[key]; if(!course)return;
@@ -822,7 +843,7 @@ function setAuthMode(mode) {
   $("registerModeBtn").classList.toggle("active",register); $("loginModeBtn").classList.toggle("active",!register); $("loginError").textContent="";
 }
 function logout() {
-state.user=null;state.done={};state.quizPassed={};state.attempts={};state.lastCompletedCourse=null;state.currentCourse=null;state.currentStep=null;saveState();
+  state.user=null;state.done={};state.quizPassed={};state.attempts={};state.lastCompletedCourse=null;state.currentCourse=null;state.currentStep=null;saveState();
   $("passwordInput").value="";$("loginError").textContent="";setSignedInUI();setAuthMode("login");showView("login");
 }
 function bindEvents() {
@@ -833,7 +854,7 @@ function bindEvents() {
     if(!emailValid){$("loginError").textContent="Please enter a valid email address.";$("emailInput").focus();return;}
     if(password.length<3){$("loginError").textContent="Enter at least 3 characters to continue in this demo.";$("passwordInput").focus();return;}
     if(register){if(state.accounts[email]){$("loginError").textContent="An account profile with this email already exists. Choose Sign in.";return;}
-state.accounts[email]={user:{name,email},done:{},quizPassed:{},lastCompletedCourse:null};activateAccount(email,false);saveState();showToast("Demo profile created.");
+      state.accounts[email]={user:{name,email},done:{},quizPassed:{},lastCompletedCourse:null};activateAccount(email,false);saveState();showToast("Demo profile created.");
     }else{if(!state.accounts[email]){$("loginError").textContent="No profile found for this email in this browser. Choose Create account first.";return;}activateAccount(email,false);saveState();}
     $("loginError").textContent="";$("passwordInput").value="";renderDashboard();
   });
@@ -843,7 +864,7 @@ state.accounts[email]={user:{name,email},done:{},quizPassed:{},lastCompletedCour
   $("brandHome").addEventListener("click",event=>{event.preventDefault();state.user?renderDashboard():showView("login");});
   $("browseCoursesBtn").addEventListener("click",()=>$ ("courseSection").scrollIntoView({behavior:"smooth",block:"start"}));
   $("courseSearch").addEventListener("input",renderCourses);
-$("backToDashboard").addEventListener("click",renderDashboard);$("roadmapBackBottom").addEventListener("click",renderDashboard);$("completionDashboardBtn").addEventListener("click",renderDashboard);
+  $("backToDashboard").addEventListener("click",renderDashboard);$("roadmapBackBottom").addEventListener("click",renderDashboard);$("completionDashboardBtn").addEventListener("click",renderDashboard);
   $("certificateBtn").addEventListener("click",()=>renderCertificate(state.lastCompletedCourse||state.currentCourse));
   $("certificateBack").addEventListener("click",()=>{const key=state.lastCompletedCourse||state.currentCourse;if(key&&progress(key).done===progress(key).total)renderCompletion(key);else renderDashboard();});
   $("printCertificate").addEventListener("click",()=>window.print());
@@ -855,5 +876,3 @@ function init() {
   else{setSignedInUI();showView("login");}
 }
 document.addEventListener("DOMContentLoaded",init);
-
-
